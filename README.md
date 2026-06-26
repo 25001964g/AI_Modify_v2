@@ -1,10 +1,10 @@
 # AI_Modify_v2
-
-Install
+Set up environment
+Install (First time only)
 curl -fsSL https://ollama.com/install.sh | sh
 
-start ollama: ollama serve
+start server: ollama serve
 
-add model: ollama pull [model_name]
+add model: ollama pull [model_name] (expected 
 
 delete model: ollama rm [model_name]
