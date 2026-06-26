@@ -1,7 +1,7 @@
 import requests
-from status import check_status
 from email_data import mock_email, demo_email
 from product_lists import product_list
+from status_list import status
 from formatting import json_structure
 
 for i, current_email in enumerate(mock_email):
@@ -17,6 +17,9 @@ You are an automated engine for handling orders through email.  Your sole task i
 
 [order email]
 {current_email}
+
+[status list]
+{status}
 
 [output requirement]
 Return a single JSON object result with the designed [JSON structure] for the email order. 

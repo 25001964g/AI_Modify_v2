@@ -1,5 +1,5 @@
 import requests
-from status import check_status
+from order_validator import check_status
 from email_data import mock_email, demo_email
 from product_lists import product_list
 

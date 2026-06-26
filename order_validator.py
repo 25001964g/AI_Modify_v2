@@ -39,8 +39,8 @@ STEP 3 (WRITE REPORT):
             """
     
     checking_valid = requests.post("http://localhost:11434/api/generate", json={
-        #"model": "llama3.2",
-        "model" : "phi3.5",
+        "model": "llama3.2",
+        #"model" : "phi3.5",
         "prompt": invalid_check_prompt,
         "stream": False
     })
