@@ -16,7 +16,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 jeans. 
+    We would like to order 90 jeans. 
     
     Thanks,
     Procurement Dept.
@@ -47,6 +47,17 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     We want to order a few jeans. Many thanks.
+    
+    Thanks,
+    Procurement Dept.
+    """,
+        #5
+    """
+    From: procurement@FGHcompany.com
+    To: sales@XYZCompany.com
+    Hi Sales Team,
+    Please process an order. 
+    We would like to order 50 shoes. 
     
     Thanks,
     Procurement Dept.
