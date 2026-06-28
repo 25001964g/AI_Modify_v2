@@ -1,7 +1,7 @@
 # Environment set up guide
 Step 1: Install ollama(First time only)
 Linux: curl -fsSL https://ollama.com/install.sh | sh
-Window: irm https://ollama.com/install.ps1 | iex
+Windows: irm https://ollama.com/install.ps1 | iex
 
 Step 2: Start server
 ollama serve
