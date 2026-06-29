@@ -2,7 +2,7 @@ import requests
 from email_data import mock_email, demo_email
 
 #Harness: Identify missing/ambiguous parameters before extraction
-def check_status(email):
+def name_detection(email):
     #This acts as an initial control step to steer the extraction
     name_detect_prompt = f"""
 You are an administrative office assistant. Your sole job is to review a customer email and extract the lowercase customer brand name.
@@ -38,4 +38,4 @@ You are an administrative office assistant. Your sole job is to review a custome
     #return customer_name
     print(customer_name)
 
-check_status(mock_email[0])
+name_detection(mock_email[0])

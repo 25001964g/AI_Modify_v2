@@ -2,13 +2,14 @@ import requests
 from email_data import mock_email, demo_email
 from product_lists import product_list
 from status_list import status
+from name_detect import name_detection
 
 for i, current_email in enumerate(mock_email):
     print(f"Processing mock email {i+1}")
+    name_detected = name_detection(current_email)
     resp = requests.post("http://localhost:11434/api/generate", json={
         "model": "phi3.5",
         "prompt": f"""
-Do not provide any programming function code and script.
 You are an automated engine for handling orders through email.  Your sole task is to collect items found in the order email order.
 
 [product list]
@@ -16,6 +17,9 @@ You are an automated engine for handling orders through email.  Your sole task i
 
 [order email]
 {current_email}
+
+[customer name]
+{name_detected}
 
 [status list]
 {status}
