@@ -34,5 +34,3 @@ Sample Data:
 email_data.py
 product_list.py
 status_list.py
-
-test
