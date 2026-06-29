@@ -1,54 +1,77 @@
+import pandas as pd
+import numpy as np
+import json
 import requests
+from order_extractor import item_extract
 from email_data import mock_email, demo_email
 from product_lists import product_list
 
-#Harness: Identify missing/ambiguous parameters before extraction
-def check_status(email, product_list):
-    #This acts as an initial control step to steer the extraction
-    invalid_check_prompt = f"""
-You are an administrative office assistant. Your sole job is to review a customer email, cross-reference it with our official inventory, and write a structured, plain-text analysis log.
+def order_validation (email, product_list):
+    #Get the structured JSON string from your Ollama request response
+    # (Simulated raw response string from your prompt above)
+    order_list = item_extract(email, product_list)
 
-[OFFICIAL PRODUCT LIST]
-{product_list}
+    #Load json formatted data to pandas dataframe
+    extracted_data = json.loads(order_list)
+    df = pd.DataFrame(extracted_data['items'])
 
-[ORDER EMAIL]
-{email}
+    # Data Cleaning for matching
+    df['match_key'] = df['product_name'].str.lower().str.strip()
 
-[CRITICAL INSTRUCTIONS - EXECUTE IN ORDER]
-STEP 1 (EXTRACT ONLY): Read the [ORDER EMAIL] and identify the exact items requested. 
-    - Read the [order email] to extract the client name.
-    - Read the [ORDER EMAIL] line by line. Identify the items explicitly written by the customer.
-    - Do not create items that are not in the email.
+    product_list['match_name'] = product_list['product_name'].str.lower().str.strip()
+    product_list['match_sku'] = product_list['sku'].str.lower().str.strip()
 
-STEP 2 (CROSS-REFERENCE):Only look up the extracted items of [ORDER EMAIL] in the [OFFICIAL PRODUCT LIST].
-    - If the item name perfectly matches an inventory item (e.g., "jeans" matches "jeans"), mark it as VALID.
-    - If the item name is generic (e.g. T-shirt)and matches multiple options ("T-shirt-black" or "T-shirt-Yellow"), mark the product name, SKU and Unit Price null and mark the status as AMBIGUOUS.
-    - If the quantity is not specify (e.g. some, few, a lot of), mark the quantity as null and mark the status as AMBIGUOUS.
-    - If the item is completely absent, mark it as UNLISTED.
-    - Only if the item name is the SKU, directly match the inventory item (e.g. "SKU0001" matches "Apple"), and the quantity is specify and not null, mark it as VALID.
+    all_items = []
 
-STEP 3 (WRITE REPORT): 
-    - Fill out the exact layout template below based on Step 1 and Step 2. Do not include markdown code block backticks.
-    - Do not include any greeting preamble, concluding remarks, notes or markdown code blocks (backticks).
+    for index, row in df.iterrows():
+        item_row = pd.DataFrame([row])
 
-[OUTPUT LAYOUT]
-### ANALYSIS SUMMARY
-[Write your 1-sentence analysis summary note here]
+        #If customer provide product name:
+        is_sku = row['match_key'].startswith('sku')
 
-### EXTRACTED LINE ITEMS
-* Customer_Name: [Name of Customer] Product Name: [Name of product] | SKU: [SKU of product (matched by SKU)] | Quantity: [Number requested] | Unit Price: [Unit Price of product]| Status: [VALID / UNLISTED / AMBIGUOUS]
-            """
-    
-    checking_valid = requests.post("http://localhost:11434/api/generate", json={
-        #"model": "llama3.2",
-        "model" : "phi3.5",
-        "prompt": invalid_check_prompt,
-        "stream": False
-    })
+        if is_sku == False:
+            # Match using product name
+            single_item = pd.merge(item_row, product_list, left_on='match_key', right_on='match_name', how='left')
+        else:
+            # Match using sku code
+            single_item = pd.merge(item_row, product_list, left_on='match_key', right_on='match_sku', how='left')
+            # If using sku matched an inventory item, product_name will become product_name_x and product_name_y
+            if 'product_name_y' in single_item.columns:
+                single_item['product_name'] = single_item['product_name_y'].fillna(product_list['product_name'])
+                # Drop the temporary x and y columns so they don't mess up future steps
+                single_item = single_item.drop(columns=['product_name_x', 'product_name_y'])
+            else:
+                single_item['product_name_x'] = single_item['product_name_y']
 
-    # code for testing purpose    
-    order_status = checking_valid.json()["response"]
-    return order_status
-    #print(order_status)
+        # Rename back product_name for appending into list
+        single_item = single_item.rename(columns={'product_name_x': 'product_name'})
+        all_items.append(single_item)
+        
+    all_items_list = pd.concat(all_items, ignore_index=True)
 
-#check_status(mock_email[1], product_list)
+    # Conditions for invalid input
+    # Condition 1: Item Name cannot match with product list
+    # Condition 2: Quantity was missing or ambiguous ("some", "few")
+    conditions = [
+        (all_items_list['sku'].isna()),       
+        (all_items_list['quantity'].isna()),
+        (all_items_list['quantity']>all_items_list['stock'])   
+    ]
+    status = ['unlisted', 'ambiguous', 'not enough stock']
+    remarks = ['Please double check and follow up the order item.', 'Please double check and follow up the actual quantity', 'Please follow up immediately for mitigation plan.']
+
+    #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
+    all_items_list['status'] = np.select(conditions,status, default='VALID')
+    all_items_list['remarks'] = np.select(conditions, remarks, default = None)
+
+    #Fill in NA data to 0
+    all_items_list['unit_price'] = all_items_list['unit_price'].fillna(0.00)
+    all_items_list['quantity_input'] = all_items_list['quantity'].fillna(0)
+
+    #Calculate the subtotal for each order item
+    all_items_list['subtotal'] = all_items_list['quantity_input'] * all_items_list['unit_price']
+
+    all_items_list = all_items_list.drop(columns=['match_key', 'match_name', 'match_sku'], errors='ignore')
+
+    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status']]
+    return order_list, validated_order_list
