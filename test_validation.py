@@ -13,7 +13,6 @@ for i, current_email in enumerate(mock_email):
         "model": "llama3.2",
         #"model" : "phi3.5",
         "prompt": f"""
-Do not provide any programming function code and script.
 You are an automated backend engine for parsing validated order details into raw JSON. Your sole task is to transform provided text data into a structured JSON object.
 
 [extracted result]

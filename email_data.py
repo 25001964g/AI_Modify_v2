@@ -51,7 +51,7 @@ mock_email = [
     Thanks,
     Procurement Dept.
     """,
-        #5
+    #5
     """
     From: procurement@FGHcompany.com
     To: sales@XYZCompany.com
@@ -61,5 +61,16 @@ mock_email = [
     
     Thanks,
     Procurement Dept.
+    """,
+    #6
+    """
+    From: patrick.chan@REWLimited.com
+    To: sales@XYZCompany.com
+    Hi Sales Team,
+    Please process an order. 
+    We would like to order 120 Socks. 
+    
+    Thanks,
+    Patrick
     """
     ]

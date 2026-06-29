@@ -19,7 +19,7 @@ def order_validation (email, product_list):
     df['match_key'] = df['product_name'].str.lower().str.strip()
 
     product_list['match_name'] = product_list['product_name'].str.lower().str.strip()
-    product_list['match_sku'] = product_list['SKU'].str.lower().str.strip()
+    product_list['match_sku'] = product_list['sku'].str.lower().str.strip()
 
     all_items = []
 
@@ -33,9 +33,9 @@ def order_validation (email, product_list):
             # Match using product name
             single_item = pd.merge(item_row, product_list, left_on='match_key', right_on='match_name', how='left')
         else:
-            # Match using SKU code
+            # Match using sku code
             single_item = pd.merge(item_row, product_list, left_on='match_key', right_on='match_sku', how='left')
-            # If using SKU matched an inventory item, product_name will become product_name_x and product_name_y
+            # If using sku matched an inventory item, product_name will become product_name_x and product_name_y
             if 'product_name_y' in single_item.columns:
                 single_item['product_name'] = single_item['product_name_y'].fillna(product_list['product_name'])
                 # Drop the temporary x and y columns so they don't mess up future steps
@@ -53,13 +53,16 @@ def order_validation (email, product_list):
     # Condition 1: Item Name cannot match with product list
     # Condition 2: Quantity was missing or ambiguous ("some", "few")
     conditions = [
-        (all_items_list['SKU'].isna()),       
-        (all_items_list['quantity'].isna())   
+        (all_items_list['sku'].isna()),       
+        (all_items_list['quantity'].isna()),
+        (all_items_list['quantity']>all_items_list['stock'])   
     ]
-    choices = ['UNLISTED', 'AMBIGUOUS']
+    status = ['unlisted', 'ambiguous', 'not enough stock']
+    remarks = ['Please double check and follow up the order item.', 'Please double check and follow up the actual quantity', 'Please follow up immediately for mitigation plan.']
 
-    #If status is not UNLISTED and AMBIGUOUS, set the status as VALID
-    all_items_list['status'] = np.select(conditions, choices, default='VALID')
+    #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
+    all_items_list['status'] = np.select(conditions,status, default='VALID')
+    all_items_list['remarks'] = np.select(conditions, remarks, default = None)
 
     #Fill in NA data to 0
     all_items_list['unit_price'] = all_items_list['unit_price'].fillna(0.00)
@@ -70,5 +73,5 @@ def order_validation (email, product_list):
 
     all_items_list = all_items_list.drop(columns=['match_key', 'match_name', 'match_sku'], errors='ignore')
 
-    validated_order_list = all_items_list[['product_name', 'quantity', 'SKU', 'unit_price', 'subtotal', 'status']]
+    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status']]
     return order_list, validated_order_list

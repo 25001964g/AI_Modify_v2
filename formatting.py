@@ -9,10 +9,10 @@ json_structure = {
                 "quantity": 0,
                 "unit_price": 0.0,
                 "subtotal": 0.0,
+                "status": "string",
+                "remarks": "string"
             }
         ],
-        "total": 0.0,
-        "status": "string",
-        "remarks": "string"
+        "total": 0.0
     }
 }
