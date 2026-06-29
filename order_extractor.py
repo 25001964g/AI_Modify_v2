@@ -1,9 +1,7 @@
 import requests
-from email_data import mock_email, demo_email
-from product_lists import product_list
 
 #Harness: Identify missing/ambiguous parameters before extraction
-def item_extract(email, product_list):
+def item_extract(email):
     #This acts as an initial control step to steer the extraction
     extract_prompt = f"""
 You are an administrative data extraction engine. Your sole job is to read an order email and extract the requested items into raw JSON.
@@ -26,8 +24,8 @@ You are an administrative data extraction engine. Your sole job is to read an or
 """
 
     order_extracted = requests.post("http://localhost:11434/api/generate", json={
-        "model": "llama3.2",
-        #"model" : "phi3.5",  
+        #"model": "llama3.2",
+        "model" : "phi3.5",  
         "prompt": extract_prompt,
         "stream": False,
         "format": "json",
@@ -37,9 +35,5 @@ You are an administrative data extraction engine. Your sole job is to read an or
         }
     })
 
-    # code for testing purpose    
     order_list = order_extracted.json()["response"]
     return order_list
-    #print(order_list)
-
-#item_extract(mock_email[1], product_list)

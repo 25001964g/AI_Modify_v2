@@ -1,15 +1,12 @@
 import pandas as pd
 import numpy as np
 import json
-import requests
 from order_extractor import item_extract
-from email_data import mock_email, demo_email
-from product_lists import product_list
 
 def order_validation (email, product_list):
     #Get the structured JSON string from your Ollama request response
     # (Simulated raw response string from your prompt above)
-    order_list = item_extract(email, product_list)
+    order_list = item_extract(email)
 
     #Load json formatted data to pandas dataframe
     extracted_data = json.loads(order_list)
@@ -23,7 +20,7 @@ def order_validation (email, product_list):
 
     all_items = []
 
-    for index, row in df.iterrows():
+    for row in df.iterrows():
         item_row = pd.DataFrame([row])
 
         #If customer provide product name:
@@ -52,6 +49,7 @@ def order_validation (email, product_list):
     # Conditions for invalid input
     # Condition 1: Item Name cannot match with product list
     # Condition 2: Quantity was missing or ambiguous ("some", "few")
+    # Condition 3: Order Quantity exceed current stock
     conditions = [
         (all_items_list['sku'].isna()),       
         (all_items_list['quantity'].isna()),
@@ -71,6 +69,7 @@ def order_validation (email, product_list):
     #Calculate the subtotal for each order item
     all_items_list['subtotal'] = all_items_list['quantity_input'] * all_items_list['unit_price']
 
+    #Cleaning up the dataframe
     all_items_list = all_items_list.drop(columns=['match_key', 'match_name', 'match_sku'], errors='ignore')
 
     validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status']]

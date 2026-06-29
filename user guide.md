@@ -23,6 +23,7 @@ formatting.py
 test_format.py
 
 Harness2 (add order validator): 
+order_extractor.py
 order_validator.py
 test_validation.py
 

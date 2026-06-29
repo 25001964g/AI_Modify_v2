@@ -10,8 +10,8 @@ for i, current_email in enumerate(mock_email):
     #Harness: add on status check
     order_list, validated_order = order_validation(current_email, product_list)
     resp = requests.post("http://localhost:11434/api/generate", json={
-        "model": "llama3.2",
-        #"model" : "phi3.5",
+        #"model": "llama3.2",
+        "model" : "phi3.5",
         "prompt": f"""
 You are an automated backend engine for parsing validated order details into raw JSON. Your sole task is to transform provided text data into a structured JSON object.
 
