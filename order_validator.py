@@ -1,54 +1,44 @@
+import pandas as pd
+import numpy as np
+import json
 import requests
+from order_extractor import item_extract
 from email_data import mock_email, demo_email
 from product_lists import product_list
 
-#Harness: Identify missing/ambiguous parameters before extraction
-def check_status(email, product_list):
-    #This acts as an initial control step to steer the extraction
-    invalid_check_prompt = f"""
-You are an administrative office assistant. Your sole job is to review a customer email, cross-reference it with our official inventory, and write a structured, plain-text analysis log.
 
-[OFFICIAL PRODUCT LIST]
-{product_list}
+#Get the structured JSON string from your Ollama request response
+# (Simulated raw response string from your prompt above)
+order_list = item_extract(mock_email[0], product_list)
 
-[ORDER EMAIL]
-{email}
+#Load json formatted data to pandas dataframe
+extracted_data = json.loads(order_list)
+df = pd.DataFrame(extracted_data['items'])
 
-[CRITICAL INSTRUCTIONS - EXECUTE IN ORDER]
-STEP 1 (EXTRACT ONLY): Read the [ORDER EMAIL] and identify the exact items requested. 
-    - Read the [order email] to extract the client name.
-    - Read the [ORDER EMAIL] line by line. Identify the items explicitly written by the customer.
-    - Do not create items that are not in the email.
+# Data Cleaning for matching
+df['product_name'] = df['product_name'].str.lower().str.strip()
+product_list['product_name'] = product_list['product_name'].str.lower().str.strip()
 
-STEP 2 (CROSS-REFERENCE):Only look up the extracted items of [ORDER EMAIL] in the [OFFICIAL PRODUCT LIST].
-    - If the item name perfectly matches an inventory item (e.g., "jeans" matches "jeans"), mark it as VALID.
-    - If the item name is generic (e.g. T-shirt)and matches multiple options ("T-shirt-black" or "T-shirt-Yellow"), mark the product name, SKU and Unit Price null and mark the status as AMBIGUOUS.
-    - If the quantity is not specify (e.g. some, few, a lot of), mark the quantity as null and mark the status as AMBIGUOUS.
-    - If the item is completely absent, mark it as UNLISTED.
-    - Only if the item name is the SKU, directly match the inventory item (e.g. "SKU0001" matches "Apple"), and the quantity is specify and not null, mark it as VALID.
+#Gnerated dataframe Left join product list
+merged_df = pd.merge(df, product_list, on='product_name', how='left')
 
-STEP 3 (WRITE REPORT): 
-    - Fill out the exact layout template below based on Step 1 and Step 2. Do not include markdown code block backticks.
-    - Do not include any greeting preamble, concluding remarks, notes or markdown code blocks (backticks).
+# Conditions for invalid input
+# Condition 1: Item Name cannot match with product list
+# Condition 2: Quantity was missing or ambiguous ("some", "few")
+conditions = [
+    (merged_df['SKU'].isna()),       
+    (merged_df['quantity'].isna())   
+]
+choices = ['UNLISTED', 'AMBIGUOUS']
 
-[OUTPUT LAYOUT]
-### ANALYSIS SUMMARY
-[Write your 1-sentence analysis summary note here]
+#If status is not UNLISTED and AMBIGUOUS, set the status as VALID
+merged_df['status'] = np.select(conditions, choices, default='VALID')
 
-### EXTRACTED LINE ITEMS
-* Customer_Name: [Name of Customer] Product Name: [Name of product] | SKU: [SKU of product (matched by SKU)] | Quantity: [Number requested] | Unit Price: [Unit Price of product]| Status: [VALID / UNLISTED / AMBIGUOUS]
-            """
-    
-    checking_valid = requests.post("http://localhost:11434/api/generate", json={
-        #"model": "llama3.2",
-        "model" : "phi3.5",
-        "prompt": invalid_check_prompt,
-        "stream": False
-    })
+#Fill in NA data to 0
+merged_df['unit_price'] = merged_df['unit_price'].fillna(0.00)
+merged_df['quantity_input'] = merged_df['quantity'].fillna(0)
 
-    # code for testing purpose    
-    order_status = checking_valid.json()["response"]
-    return order_status
-    #print(order_status)
+#Calculate the subtotal for each order item
+merged_df['subtotal'] = merged_df['quantity_input'] * merged_df['unit_price']
 
-#check_status(mock_email[1], product_list)
+print(merged_df[['product_name', 'quantity', 'SKU', 'unit_price', 'subtotal', 'status']])
