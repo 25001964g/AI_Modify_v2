@@ -18,6 +18,7 @@ You are an administrative data extraction engine. Your sole job is to read an or
 
 [OUTPUT LAYOUT]
 {{
+  "customer_name":[Entity Name of Customer],
   "items": [
     {{"product_name": "Item 1", "quantity": Number or null}}
   ]

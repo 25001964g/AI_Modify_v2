@@ -1,7 +1,7 @@
 #Harness: Format the output in a specific JSON format
 json_structure = {
     "order": {
-        "client": "string",
+        "customer": "string",
         "items": [
             {
                 "product_name": "string",

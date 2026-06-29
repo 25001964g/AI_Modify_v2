@@ -37,7 +37,7 @@ def order_validation (email, product_list):
             single_item = pd.merge(item_row, product_list, left_on='match_key', right_on='match_sku', how='left')
             # If using SKU matched an inventory item, product_name will become product_name_x and product_name_y
             if 'product_name_y' in single_item.columns:
-                single_item['product_name'] = single_item['product_name_y'].fillna(single_item['product_name_x'])
+                single_item['product_name'] = single_item['product_name_y'].fillna(product_list['product_name'])
                 # Drop the temporary x and y columns so they don't mess up future steps
                 single_item = single_item.drop(columns=['product_name_x', 'product_name_y'])
             else:
@@ -71,4 +71,4 @@ def order_validation (email, product_list):
     all_items_list = all_items_list.drop(columns=['match_key', 'match_name', 'match_sku'], errors='ignore')
 
     validated_order_list = all_items_list[['product_name', 'quantity', 'SKU', 'unit_price', 'subtotal', 'status']]
-    return validated_order_list
+    return order_list, validated_order_list
