@@ -72,5 +72,16 @@ mock_email = [
     
     Thanks,
     Patrick
+    """,
+    #7
+    """
+    From: amychan@REWLimited.com
+    To: sales@XYZCompany.com
+    Hi Sales Team,
+    Please process an order. 
+    We would like to order 120 Socks and 50 Jeans. 
+    
+    Thanks,
+    Amy
     """
     ]
