@@ -35,7 +35,4 @@ You are an administrative office assistant. Your sole job is to review a custome
 
     # code for testing purpose    
     customer_name = name_detect.json()["response"]
-    #return customer_name
-    print(customer_name)
-
-name_detection(mock_email[0])
+    return customer_name

@@ -13,14 +13,14 @@ def order_validation (email, product_list):
     df = pd.DataFrame(extracted_data['items'])
 
     # Data Cleaning for matching
-    df['match_key'] = df['product_name'].str.lower().str.strip()
+    df['match_key'] = df['product_name'].fillna('').astype(str).str.lower().str.strip()
 
     product_list['match_name'] = product_list['product_name'].str.lower().str.strip()
     product_list['match_sku'] = product_list['sku'].str.lower().str.strip()
 
     all_items = []
 
-    for row in df.iterrows():
+    for index, row in df.iterrows():
         item_row = pd.DataFrame([row])
 
         #If customer provide product name:
@@ -56,11 +56,9 @@ def order_validation (email, product_list):
         (all_items_list['quantity']>all_items_list['stock'])   
     ]
     status = ['unlisted', 'ambiguous', 'not enough stock']
-    remarks = ['Please double check and follow up the order item.', 'Please double check and follow up the actual quantity', 'Please follow up immediately for mitigation plan.']
 
     #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
     all_items_list['status'] = np.select(conditions,status, default='VALID')
-    all_items_list['remarks'] = np.select(conditions, remarks, default = None)
 
     #Fill in NA data to 0
     all_items_list['unit_price'] = all_items_list['unit_price'].fillna(0.00)
@@ -73,4 +71,4 @@ def order_validation (email, product_list):
     all_items_list = all_items_list.drop(columns=['match_key', 'match_name', 'match_sku'], errors='ignore')
 
     validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status']]
-    return order_list, validated_order_list
+    return validated_order_list
