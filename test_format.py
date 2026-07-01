@@ -1,5 +1,5 @@
 import requests
-from email_data import mock_email, demo_email
+from email_data import mock_email
 from product_lists import product_list
 from status_list import status
 from formatting import single_json_structure, multiple_json_structure
@@ -14,6 +14,8 @@ def add_format (email):
 
     critical no-hallucination requirement: you are strictly forbidden from inventing, hallucinating, or pulling product data from outside the provided reference blocks. do not generate fake or placeholder data under any circumstances.
 
+    ### Input Data
+    
     [product list]
     {product_list}
 

@@ -1,1 +1,1 @@
-status = ["VALID", "AMBIGUOUS", "UNLISTED"]
+status = ['unlisted', 'ambiguous', 'not enough stock']

@@ -5,16 +5,16 @@
 Email -> LLM Processor -> order management system (OMS)
 
 ### LLM:
--> Retrieval -> Scan Order -> Draft order (json) -> Modifier -> Second Draft order (json) -> Order Status Check (Pending) + Security Check(Pending) -> 
+-> Retrieval -> Scan Order -> Draft order (json) -> Modifier -> Second Draft order (json) -> 
 Retrieval: Format, Status list, product list
 Modifier: Modify First Draft output with validator
 
-
 Harness:
 1. Output Format
-2. Order Verifier (item status check and name detection)
-3. Order Status Check (For auto processing or require human checking) (Pending)
-4. Security Check (Pending)
+2. Order Verifier: 
+2.1: name detection
+2.2: extractor helper
+2.3: validator
 
 ## Order processor
 V0:

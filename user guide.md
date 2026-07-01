@@ -22,14 +22,21 @@ Harness1 (add format library):
 formatting.py
 test_format.py
 
-Harness2 (add order validator): 
-order_extractor.py
-order_validator.py
-test_validation.py
-
-Harness3 (add name detection):
+Harness2 (add name detection):
 name_detect.py
-test_customer_name.py
+test_baseline_nameDetect.py
+
+Harness3 (add extractor helper): 
+order_extractor_plain.py
+test_baseline_extractor.py
+
+Harness4 (add validator):
+order_extractor.py
+product_validator.py
+test_baseline_validator.py
+
+Full Workflow:
+order_full_modifier.py
 
 Sample Data:
 email_data.py
