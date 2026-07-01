@@ -8,7 +8,7 @@ single_json_structure = {
         "quantity": 0.0,
         "unit_price": 0.0,
         "subtotal": 0.0,
-        "status": "string"
+        "item status": "string"
         }
     ],
     "total": 0.0
@@ -23,7 +23,7 @@ multiple_json_structure = {
         "quantity": 0.0,
         "unit_price": 0.0,
         "subtotal": 0.0,
-        "status": "string"
+        "item status": "string"
         },
         {
         "product_name": "item2",
@@ -31,8 +31,9 @@ multiple_json_structure = {
         "quantity": 0.0,
         "unit_price": 0.0,
         "subtotal": 0.0,
-        "status": "string"
+        "item status": "string"
         }
     ],
-    "total": 0.0
+    "total": 0.0,
+    
 }

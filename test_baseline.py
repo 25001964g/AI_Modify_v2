@@ -21,7 +21,7 @@ You are an automated engine for handling orders through email.  Your sole task i
 {status}
 
 [output requirement]
-Return a single JSON object result for the email order including: client_name, product_name, SKU, quantity, unit_price, subtotal, total, status, remark. 
+Return a single JSON object result for the email order including: client_name, product_name, SKU, quantity, unit_price, subtotal, total, each order item's status. 
 Do not include any other text or markdown block formatting.
 """,
         "stream": False,
