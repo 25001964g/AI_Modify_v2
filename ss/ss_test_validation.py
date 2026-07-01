@@ -1,5 +1,5 @@
 import requests
-from order_validator import order_validation
+from ss.ss_order_validator import order_validation
 from order_extractor import item_extract
 from email_data import mock_email, demo_email
 from product_lists import product_list

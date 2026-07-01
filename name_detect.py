@@ -1,5 +1,4 @@
 import requests
-from email_data import mock_email, demo_email
 
 #Harness: Identify missing/ambiguous parameters before extraction
 def name_detection(email):

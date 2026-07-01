@@ -1,13 +1,22 @@
-demo_email = """
-    From: procurement@ABCcompany.com
-    To: sales@XYZCompany.com
-    Hi Sales Team,
-    Please process an order. 
-    We would like to order 120 shirt. 
-    
-    Thanks,
-    Procurement Dept.
-    """
+"""
+Test Case Type:
+Single order item
+1. Product Name: In list; Quantity: Provided
+2. Product Name: In list; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+4. Product Name: Not Provided; Quantity: Provided
+5. Product Name: Not in List; Quantity: Provided
+6. Product Name: Not Provided; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+7. Product Name: Not in List; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+
+Multiple order item
+1. Product Name: In list; Quantity: Provided
+2. Product Name: In list; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+4. Product Name: Not Provided; Quantity: Provided
+5. Product Name: Not in List; Quantity: Provided
+6. Product Name: Not Provided; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+7. Product Name: Not in List; Quantity: Not Clear (a few, some e.t.c) /Not Provided
+
+"""
 
 mock_email = [
     #1
@@ -79,7 +88,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 Socks and 50 Jeans. 
+    We would like to order 120 SKU1190 and 50 Jeans. 
     
     Thanks,
     Amy
