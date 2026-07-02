@@ -31,7 +31,7 @@ for i, current_email in enumerate(mock_email):
     1. Map Customer Identity: Map the top-level "customer" string field by copying the exact string found within [Customer Name Reference].
     
     [Output Requirement]
-    Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, unit_price, subtotal, total, each order item's status. 
+    Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, price, subtotal, total, each order item's status. 
     
     Do not include any other text or markdown block formatting.
     """,

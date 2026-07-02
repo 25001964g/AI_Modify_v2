@@ -6,7 +6,7 @@ single_json_structure = {
         "product_name": "string",
         "sku": "string or null",
         "quantity": 0.0,
-        "unit_price": 0.0,
+        "price": 0.0,
         "subtotal": 0.0,
         "item status": "string"
         }
@@ -21,7 +21,7 @@ multiple_json_structure = {
         "product_name": "item1",
         "sku": "string or null",
         "quantity": 0.0,
-        "unit_price": 0.0,
+        "price": 0.0,
         "subtotal": 0.0,
         "item status": "string"
         },
@@ -29,7 +29,7 @@ multiple_json_structure = {
         "product_name": "item2",
         "sku": "string or null",
         "quantity": 0.0,
-        "unit_price": 0.0,
+        "price": 0.0,
         "subtotal": 0.0,
         "item status": "string"
         }

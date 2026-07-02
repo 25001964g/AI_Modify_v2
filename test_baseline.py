@@ -24,7 +24,7 @@ for i, current_email in enumerate(mock_email):
     {status}
 
     [output requirement]
-    Return a single JSON object result for the email order including: client_name, product_name, SKU, quantity, unit_price, subtotal, total, each order item's status. 
+    Return a single JSON object result for the email order including: client_name, product_name, SKU, quantity, price, subtotal, total, each order item's status. 
     Do not include any other text or markdown block formatting.
     """,
         "stream": False,

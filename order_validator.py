@@ -13,7 +13,7 @@ def order_validation (email, product_list):
     except (json.JSONDecodeError, KeyError, TypeError) as e:
         print(f"Error parsing JSON from email: {e}")
         # Return an empty DataFrame matching your schema if input fails
-        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status'])
+        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status'])
 
     # Data Cleaning for matching
     df['match_key'] = df['product_name'].fillna('').astype(str).str.lower().str.strip()
@@ -38,7 +38,7 @@ def order_validation (email, product_list):
     all_items_list = pd.concat([matched_name, matched_sku], ignore_index=True)
 
     # Handle na for numeric data
-    all_items_list['unit_price'] = all_items_list['unit_price'].fillna(0.00)
+    all_items_list['price'] = all_items_list['price'].fillna(0.00)
     all_items_list['quantity'] = all_items_list['quantity'].fillna(0)
 
     # Conditions for invalid input
@@ -56,10 +56,10 @@ def order_validation (email, product_list):
     all_items_list['status'] = np.select(conditions,status, default='VALID')
 
     #Calculation
-    all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['unit_price']
+    all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['price']
 
     # Safely select final columns even if columns were slightly named differently
-    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'unit_price', 'subtotal', 'status']]
+    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status']]
 
 
     return validated_order_list
