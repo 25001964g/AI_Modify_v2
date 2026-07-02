@@ -23,6 +23,7 @@ Baseline: python test_baseline.py
 Baseline + Name Detection: python test_baseline_nameDetect.py
 Baseline + Extractor: python test_baseline_extractor.py
 Baseline + Validator: python test_baseline_validator.py
+Full workflow: python order_full_modifier.py
 ----------------------------------------------------------------
 # Project File
 Baseline: 

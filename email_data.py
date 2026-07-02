@@ -45,7 +45,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 90 jeans. 
+    We would like to order 90 Crew Socks Black. 
     
     Thanks,
     Procurement Dept.
@@ -65,7 +65,7 @@ mock_email = [
     From: procurement@MENClothing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    We want to order 100 SKU1190. Many thanks.
+    We want to order 100 SKU8828. Many thanks.
     
     Thanks,
     Procurement Dept.
@@ -75,7 +75,7 @@ mock_email = [
     From: procurement@IdealClothing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    We want to order a few jeans. Many thanks.
+    We want to order a few Athletic Chino Shorts. Many thanks.
     
     Thanks,
     Procurement Dept.
@@ -86,7 +86,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 50 shoes. 
+    We would like to order 50 Shoes. 
     
     Thanks,
     Procurement Dept.
@@ -97,7 +97,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 Socks. 
+    We would like to order 120 Cargo Pants. 
     
     Thanks,
     Patrick
@@ -108,7 +108,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 SKU1190 and 50 Jeans. 
+    We would like to order 120 SKU1191 and 50 Ankle Socks White. 
     
     Thanks,
     Amy
