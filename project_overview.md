@@ -1,56 +1,27 @@
 # Project Overview
 # Background:
+Assume that a B2B company will receive email order. In this project, we try to extract the the order required information and verify the information correctness, and then we will export the result via json format to send the data to Order Management System, Database or csv for daily order operation.
 
-# Proposed Workflow (Pending):
-Email -> LLM Processor -> order management system (OMS)
+# Proposed Workflow:
+See Workflow.png
+![alt text](Workflow.png)
 
 ### LLM:
--> Retrieval -> Scan Order -> Draft order (json) -> Modifier -> Second Draft order (json) -> 
+-> Retrieval -> Scan Order -> Draft order (json) -> Modifier -> Verified order ->
 Retrieval: Format, Status list, product list
 Modifier: Modify First Draft output with validator
 
 Harness:
 1. Output Format
 2. Order Verifier: 
-2.1: name detection
-2.2: extractor helper
-2.3: validator
+2.1: Name detection
+2.2: Extractor
+2.3: Validator
 
-## Order processor
-V0:
-Baseline
+Test Procedure:
+1. Baseline
+2. Baseline + Format
+3. Baseline + Name detection
+4. Baseline + Extractor
+5. Baseline + Validator
 
-V1.1 (V0 + Retrieval):
-- V0
-- Product list
-- Status list
-- Formatting
-
-V1.2 (V1.1 + order validation check):
-- V1
-- order extractor
-- order validator
-- name detect
-
-V1.3 (V1.2 + order process controller):
-Pending
-
-Testing Procedure:
-1. V0
-2. V1.1:
-3. V1.2:
-4. V1.2 without V1.1:
-5. V1.3 :
-6. V1.3 without V1.2:
-
-## Security check
-V2.1 (V0 + Retrieval):
-Pending
-
-V2.2 (V2.1 + checking/verfifier):
-Pending
-
-Testing procedure:
-V2.1:
-V2.2:
-V2.2 without V2.1

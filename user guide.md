@@ -4,7 +4,7 @@ Step 1: Install ollama(First time only)
 Linux: curl -fsSL https://ollama.com/install.sh | sh
 Windows: irm https://ollama.com/install.ps1 | iex
 
-Step 2: Start server (Only for github codespace)
+Step 2: Start server (Only for Virtual Environment)
 ollama serve
 
 Step 3: Add model to ollama (Need to add at first time)
@@ -13,6 +13,9 @@ add model: ollama pull [model_name] (expected llama3.2/ phi3.5(recommended))
 Optional:
 delete model: ollama rm [model_name]
 view model list downloaded in ollama: ollama list
+
+Library Required:
+pandas: pip install pandas
 ----------------------------------------------------------------
 # Project File
 Baseline: 
@@ -26,7 +29,7 @@ Harness2 (add name detection):
 name_detect.py
 test_baseline_nameDetect.py
 
-Harness3 (add extractor helper): 
+Harness3 (add extractor): 
 order_extractor_plain.py
 test_baseline_extractor.py
 
