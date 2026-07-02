@@ -1,4 +1,5 @@
 ## User Guide
+---------------------------------------------------------------
 # Environment set up guide
 Step 1: Install ollama(First time only)
 Linux: curl -fsSL https://ollama.com/install.sh | sh
@@ -16,6 +17,12 @@ view model list downloaded in ollama: ollama list
 
 Library Required:
 pandas: pip install pandas
+----------------------------------------------------------------
+# Testing file:
+Baseline: python test_baseline.py
+Baseline + Name Detection: python test_baseline_nameDetect.py
+Baseline + Extractor: python test_baseline_extractor.py
+Baseline + Validator: python test_baseline_validator.py
 ----------------------------------------------------------------
 # Project File
 Baseline: 
@@ -45,3 +52,4 @@ Sample Data:
 email_data.py
 product_list.py
 status_list.py
+--------------------------------------------------------------------
