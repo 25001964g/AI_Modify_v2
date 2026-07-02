@@ -1,6 +1,6 @@
 # Project Overview
 # Background:
-Assume that a B2B company will receive email order. In this project, we try to extract the the order required information and verify the information correctness, and then we will export the result via json format to send the data to Order Management System, Database or csv for daily order operation.
+Assume that a B2B company will receive email order. In this project, we try to help the sales team to extract the the order required information and verify the information correctness, and then we will export the result via json format to send the data to Order Management System, Database or csv for daily order operation.
 
 # Proposed Workflow:
 See Workflow.png
