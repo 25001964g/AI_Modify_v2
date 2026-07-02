@@ -1,7 +1,7 @@
 import requests
 from product_lists import product_list
 from status_list import status
-from formatting import single_json_structure, multiple_json_structure
+from formatting import json_structure
 
 
 def add_format (email):
@@ -26,8 +26,7 @@ def add_format (email):
     Do not include any other text or markdown block formatting.
 
     [json structure]
-    If there is only one order item: {single_json_structure}
-    If there are multiple order items: {multiple_json_structure}
+    {json_structure}
     """,
             "stream": False,
             "format": "json",

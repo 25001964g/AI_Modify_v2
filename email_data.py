@@ -75,7 +75,7 @@ mock_email = [
     From: procurement@IdealClothing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    We want to order a few Athletic Chino Shorts. Many thanks.
+    We want to order a few T-Shirt Blue. Many thanks.
     
     Thanks,
     Procurement Dept.
