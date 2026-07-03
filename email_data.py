@@ -52,7 +52,7 @@ mock_email = [
     """,
     #2
     """
-    From: Alex@CloThcompany.com
+    From: Alex@Retailcompany.com
     To: sales@XYZCompany.com
     Hi Sales Team,
     Could we order 100 Cup noodle? Many thanks.
@@ -62,7 +62,7 @@ mock_email = [
     """,
     #3
     """
-    From: procurement@MENClothing.com
+    From: procurement@MENRetailing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
     We want to order 10 SKU1002. Many thanks.
@@ -72,7 +72,7 @@ mock_email = [
     """,
     #4
     """
-    From: procurement@IdealClothing.com
+    From: procurement@Idealshop.com
     To: sales@XYZCompany.com
     Hi Sales Team,
     We want to order a few Curry Flavor Cup Noodle. Many thanks.
@@ -104,7 +104,7 @@ mock_email = [
     """,
     #7
     """
-    From: amychan@REWLimited.com
+    From: amychan@WelcomeRetail.com
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
