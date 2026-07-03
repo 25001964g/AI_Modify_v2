@@ -32,6 +32,7 @@ for i, current_email in enumerate(mock_email):
         * "subtotal": Map the calculated item row total value.
         * "status": Map the evaluated operational flag (e.g., "valid", "unlisted", "ambiguous", "not enough stock").
     4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
+    5. Language Requirement: All information for the order should be in English.
 
     [Output Requirement]
     Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, price, subtotal, total, status. 

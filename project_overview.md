@@ -25,3 +25,7 @@ Test Procedure:
 4. Baseline + Extractor
 5. Baseline + Validator
 
+Expected Output:
+1. follow the structure of general_information.formatting.py
+2. product_name should be in English
+
