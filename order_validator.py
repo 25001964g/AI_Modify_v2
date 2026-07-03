@@ -13,7 +13,7 @@ def order_validation (email, product_list):
     except (json.JSONDecodeError, KeyError, TypeError) as e:
         print(f"Error parsing JSON from email: {e}")
         # Return an empty DataFrame matching your schema if input fails
-        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'item_status'])
+        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status'])
 
     # Data Cleaning for matching
     df['match_key'] = df['product_name'].fillna('').astype(str).str.lower().str.strip()
@@ -53,13 +53,13 @@ def order_validation (email, product_list):
     status = ['unlisted', 'ambiguous', 'not enough stock']
 
     #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
-    all_items_list['item_status'] = np.select(conditions,status, default='VALID')
+    all_items_list['status'] = np.select(conditions,status, default='VALID')
 
     #Calculation
     all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['price']
 
     # Safely select final columns even if columns were slightly named differently
-    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'price', 'subtotal', 'item_status']]
+    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status']]
 
 
     return validated_order_list
