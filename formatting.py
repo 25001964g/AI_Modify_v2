@@ -8,7 +8,7 @@ json_structure = {
         "quantity": 0.0,
         "price": 0.0,
         "subtotal": 0.0,
-        "item status": "string"
+        "item_status": "string"
         }
     ],
     "total": 0.0

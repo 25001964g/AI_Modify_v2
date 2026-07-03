@@ -46,7 +46,7 @@ def modifier(email):
     4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
 
     [Output Requirement]
-    Return ONLY the final, modified JSON object matching this exact architectural structure. Do not include conversational text, markdown wrapping prose, or explanations. The output must be valid, parseable JSON.
+    Follow the [Strict Transformation Rules] and modify [Generated Result To Be Modified] including: customer_name, product_name, SKU, quantity, price, subtotal, total, item_status. 
     """,
             "stream": False,
             "format": "json",

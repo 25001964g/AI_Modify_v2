@@ -34,10 +34,7 @@ for i, current_email in enumerate(mock_email):
     4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
 
     [Output Requirement]
-    Return ONLY the final, modified JSON object matching this exact architectural structure. Do not include conversational text, markdown wrapping prose, or explanations. The output must be valid, parseable JSON.
-
-    [Output Requirement]
-    Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, price, subtotal, total, each order item's status. 
+    Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, price, subtotal, total, item_status. 
     """,
         "stream": False,
         "format": "json",
