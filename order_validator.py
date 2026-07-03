@@ -53,7 +53,7 @@ def order_validation (email, product_list):
     status = ['unlisted', 'ambiguous', 'not enough stock']
 
     #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
-    all_items_list['status'] = np.select(conditions,status, default='VALID')
+    all_items_list['item_status'] = np.select(conditions,status, default='VALID')
 
     #Calculation
     all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['price']
