@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import json
 from order_extractor import item_extract
+from email_data import mock_email
+from general_information.product_lists import product_list
 
 def order_validation (email, product_list):
     #Get the structured JSON string from your Ollama request response
@@ -53,7 +55,7 @@ def order_validation (email, product_list):
     status = ['unlisted', 'ambiguous', 'not enough stock']
 
     #If status is not unlisted and ambiguous, set the status as VALID, and remarks as None
-    all_items_list['status'] = np.select(conditions,status, default='VALID')
+    all_items_list['status'] = np.select(conditions,status, default='valid')
 
     #Calculation
     all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['price']
@@ -63,3 +65,5 @@ def order_validation (email, product_list):
 
 
     return validated_order_list
+
+print(order_validation(mock_email[1], product_list))

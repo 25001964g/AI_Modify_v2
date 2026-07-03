@@ -1,7 +1,7 @@
 import requests
 from email_data import mock_email
-from product_lists import product_list
-from status_list import status
+from general_information.product_lists import product_list
+from general_information.status_list import status
 
 for i, current_email in enumerate(mock_email):
     print(f"Processing mock email {i+1}")

@@ -1,8 +1,8 @@
 import requests
 from order_validator import order_validation
 from email_data import mock_email
-from product_lists import product_list
-from format_order import add_format
+from general_information.product_lists import product_list
+from general_information.format_order import add_format
 from name_detect import name_detection
 import json
 import pandas as pd

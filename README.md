@@ -24,26 +24,27 @@ Baseline + Name Detection: python test_baseline_nameDetect.py
 Baseline + Extractor: python test_baseline_extractor.py
 Baseline + Validator: python test_baseline_validator.py
 Full workflow: python order_full_modifier.py
+
 ----------------------------------------------------------------
 # Project File
 Baseline: 
 test_baseline.py
 
 Harness1 (add format library): 
-formatting.py
+general_infomration.formatting.py
 test_format.py
 
 Harness2 (add name detection):
-name_detect.py
+name_detection_component.name_detect.py
 test_baseline_nameDetect.py
 
-Harness3 (add extractor): 
-order_extractor_plain.py
+Harness3 (add extract helper): 
+extractot_component.order_extractor_plain.py
 test_baseline_extractor.py
 
 Harness4 (add validator):
-order_extractor.py
-product_validator.py
+validator_component.order_extractor.py
+validator_component.product_validator.py
 test_baseline_validator.py
 
 Full Workflow:
@@ -51,6 +52,6 @@ order_full_modifier.py
 
 Sample Data:
 email_data.py
-product_list.py
-status_list.py
+general_information.product_list.py
+general_information.status_list.py
 --------------------------------------------------------------------

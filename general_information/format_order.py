@@ -1,7 +1,7 @@
 import requests
-from product_lists import product_list
-from status_list import status
-from formatting import json_structure
+from general_information.product_lists import product_list
+from general_information.status_list import status
+from general_information.formatting import json_structure
 
 
 def add_format (email):
