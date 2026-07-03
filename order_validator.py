@@ -13,7 +13,7 @@ def order_validation (email, product_list):
     except (json.JSONDecodeError, KeyError, TypeError) as e:
         print(f"Error parsing JSON from email: {e}")
         # Return an empty DataFrame matching your schema if input fails
-        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status'])
+        return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'item_status'])
 
     # Data Cleaning for matching
     df['match_key'] = df['product_name'].fillna('').astype(str).str.lower().str.strip()
@@ -59,7 +59,7 @@ def order_validation (email, product_list):
     all_items_list['subtotal'] = all_items_list['quantity'] * all_items_list['price']
 
     # Safely select final columns even if columns were slightly named differently
-    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status']]
+    validated_order_list = all_items_list[['product_name', 'quantity', 'sku', 'price', 'subtotal', 'item_status']]
 
 
     return validated_order_list
