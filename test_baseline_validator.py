@@ -30,7 +30,7 @@ for i, current_email in enumerate(mock_email):
         * "sku": Map the assigned internal SKU value.
         * "price": Map the designated per-item catalog pricing decimal value.
         * "subtotal": Map the calculated item row total value.
-        * "status": Map the evaluated operational flag (e.g., "VALID", "unlisted", "not enough stock").
+        * "status": Map the evaluated operational flag (e.g., "valid", "unlisted", "ambiguous", "not enough stock").
     4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
 
     [Output Requirement]

@@ -2,7 +2,7 @@ import requests
 from email_data import mock_email
 from product_lists import product_list
 from status_list import status
-from formatting import single_json_structure, multiple_json_structure
+from formatting import json_structure
 
 def add_format (email):
     for i, current_email in enumerate(email):
@@ -25,13 +25,23 @@ def add_format (email):
     [status list]
     {status}
 
-    [output requirement]
-    return a single json object result with the designed [json structure] for the email order. 
-    do not include any other text or markdown block formatting.
+    [Ouput Structure]
+    {json_structure}
 
-    [json structure]
-    If there is only one order item: {single_json_structure}
-    If there are multiple order items: {multiple_json_structure}
+    [Strict Transformation Rules]
+        1. Map Customer Identity: Map the top-level "customer" string field by copying the exact string found within [order email].
+        2. Synchronize Item Structure (1:1 standard): Read the [order_email] provided. For every single distinct row object present in that reference, create exactly one item object inside the final output "items" array. Do not drop, skip, combine, or invent records.
+        3. Enforce Database Standard Fields: For each item mapping, inject and format the following explicit keys pulled from your validated data:
+            * "product_name": Copy the official product description exactly as written in [order email].
+            * "quantity": Map the exact numeric quantity input.
+            * "sku": Map the assigned internal SKU value.
+            * "price": Map the designated per-item catalog pricing decimal value.
+            * "subtotal": Map the calculated item row total value.
+            * "status": Map the evaluated operational flag (e.g., "valid", "unlisted", "ambiguous","not enough stock").
+        4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
+
+        [Output Requirement]
+        Follow the [Strict Transformation Rules] and Return a single JSON object result for the email order including: customer_name, product_name, SKU, quantity, price, subtotal, total, each order item's status. 
     """,
             "stream": False,
             "format": "json",
