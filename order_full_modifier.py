@@ -12,7 +12,7 @@ def modifier(email):
         customer_name = name_detection(current_email)
         # Order check process
         format_result = add_format(current_email)
-        #Harness: add on status check
+        #Harness: add on status check       
         validated_order = order_validation(current_email, product_list)
         resp = requests.post("http://localhost:11434/api/generate", json={
             #"model": "llama3.2",

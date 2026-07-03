@@ -45,7 +45,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 90 Crew Socks Black. 
+    We would like to order 5 Classic Chicken Cup Noodle. 
     
     Thanks,
     Procurement Dept.
@@ -55,7 +55,7 @@ mock_email = [
     From: Alex@CloThcompany.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    Could we order 100 T-shirt? Many thanks.
+    Could we order 100 Cup noodle? Many thanks.
     
     Thanks,
     Alex
@@ -65,7 +65,7 @@ mock_email = [
     From: procurement@MENClothing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    We want to order 100 SKU8828. Many thanks.
+    We want to order 10 SKU1002. Many thanks.
     
     Thanks,
     Procurement Dept.
@@ -75,7 +75,7 @@ mock_email = [
     From: procurement@IdealClothing.com
     To: sales@XYZCompany.com
     Hi Sales Team,
-    We want to order a few T-Shirt Blue. Many thanks.
+    We want to order a few Curry Flavor Cup Noodle. Many thanks.
     
     Thanks,
     Procurement Dept.
@@ -86,7 +86,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 50 Shoes. 
+    We would like to order 5 box of Tomato Cup noodle. 
     
     Thanks,
     Procurement Dept.
@@ -97,7 +97,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 Cargo Pants. 
+    We would like to order 20 Curry Flavor Cup Noodle. 
     
     Thanks,
     Patrick
@@ -108,7 +108,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order 120 SKU1191 and 50 Ankle Socks White. 
+    We would like to order 12 SKU1001 and 5 Shrimp Flavor Cup Noodle. 
     
     Thanks,
     Amy
