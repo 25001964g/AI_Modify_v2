@@ -164,7 +164,7 @@ mock_email = [
 
 
 # Single order item test cases split 1 (11)
-test_email_1_1 = [
+test_email_1 = [
     # 1. In list; quantity provided
     """
     From: purchasing@northvaleretail.com
@@ -310,108 +310,8 @@ test_email_1_1 = [
     Sincerely,
     Gary Poon
     Buyer, Dry Grocery
-    """
-]
-
-# Single order item test cases split 1 (10)
-test_email_1_2 = [
-    # 10. In list; quantity equals boundary (100)
-    """
-    From: purchasing@valuechoiceglobal.com
-    To: sales@XYZCompany.com
-    Subject: Exact Campaign Allocation
-
-    Hello Sales Team,
-
-    Please process an order for 100 Tonkotsu Pork Cup Noodle for our annual customer reward campaign. The figure is exactly aligned to the planned giveaway packs and has been approved by both sales and finance. We need this quantity delivered to our main DC under normal terms.
-
-    Kindly acknowledge receipt of this request and provide your estimated dispatch schedule. If any lead-time issue appears, please inform us today so we can update our campaign communication.
-
-    Best regards,
-    Mandy Fok
-    Procurement Manager
     """,
-    # 11. Partial in list; quantity provided
-    """
-    From: replenishment@primebuyhk.com
-    To: sales@XYZCompany.com
-    Subject: Flavor Confirmation Needed
-
-    Dear Team,
-
-    We would like to order 22 Shrimp Cup Noodle for our neighborhood store program. Quantity is fixed and already approved, but our team shortened the item description in the internal form. Please confirm the exact matching product name in your catalog before dispatch to avoid receiving mismatch.
-
-    Once you confirm the closest valid item, we will issue the final PO number in the same thread and keep the requested quantity unchanged.
-
-    Thanks in advance,
-    Rachel Tam
-    Purchasing Coordinator
-    """,
-    # 12. Partial in list; quantity unclear or not provided
-    """
-    From: demand@freshlinegroup.com
-    To: sales@XYZCompany.com
-    Subject: Preliminary Refill for Kimchi Line
-
-    Hi Sales Team,
-
-    Our stores are asking for more Kimchi Cup Noodle soon, but we have not finalized the shipment quantity. Please reserve some stock temporarily while our branch count is being consolidated. The item name in our request is shortened from your catalog wording, so we may need your confirmation on the exact matching product.
-
-    Kindly reply with available quantity and lead time. We will send final numbers after internal sign-off later today.
-
-    Regards,
-    Louis Cheng
-    Demand Planner
-    """,
-    # 13. In list; quantity provided; conflicting SKU
-    """
-    From: purchasing@orbittrading.hk
-    To: sales@XYZCompany.com
-    Subject: PO with Item/SKU Check
-
-    Dear Sales Team,
-
-    Please arrange 16 Curry Flavor Cup Noodle for our central warehouse. In our ERP line, the SKU appears as SKU1002 due to a template copy from a previous order. Kindly follow the product name requested in this email and flag any mismatch according to your standard validation process.
-
-    We need confirmation today because transport booking closes at 4 PM. Please reply with the accepted item code and expected delivery date.
-
-    Best,
-    Hannah Chiu
-    Procurement Executive
-    """,
-    # 14. In list duplicate name in DB; quantity provided; SKU not provided
-    """
-    From: buyer@westshoremarkets.com
-    To: sales@XYZCompany.com
-    Subject: Catalog Name Clarification
-
-    Hello Team,
-
-    We need 28 Classic Chicken Cup Noodle for next week's floor-stack display. Our master data team mentioned there may be two internal records carrying a similar Classic Chicken naming convention, but we are not submitting SKU in this request. Please process with your standard item-matching rules and confirm which exact record you will ship.
-
-    Quantity is final and delivery should follow normal route to our Yuen Long warehouse. Please send confirmation by end of day.
-
-    Regards,
-    Derek Lui
-    Category Procurement
-    """,
-    # 15. In list duplicate name in DB; quantity provided; SKU provided
-    """
-    From: sourcing@finedealretail.com
-    To: sales@XYZCompany.com
-    Subject: Name Duplication Control
-
-    Dear Sales Colleagues,
-
-    Please process 26 Classic Chicken Cup Noodle with SKU1001 for our monthly replenishment. We understand the product name can appear in more than one internal naming variant, so we are including SKU here to lock the intended item. Quantity and shipping address are both confirmed.
-
-    Kindly acknowledge that SKU1001 will be used as the primary reference on packing documents and invoice lines. We appreciate your quick confirmation to proceed.
-
-    Best regards,
-    Joanne Kwok
-    Senior Buyer
-    """,
-    # 16. In list; invalid quantity (0 / negative / decimal)
+    # 10. In list; invalid quantity (0 / negative / decimal)
     """
     From: planning@dailyharvestgroup.com
     To: sales@XYZCompany.com
@@ -426,54 +326,6 @@ test_email_1_2 = [
     Thank you,
     Anita Lam
     Inventory Planning
-    """,
-    # 17. Not in list; over-stock style number
-    """
-    From: category.team@marketpulsehk.com
-    To: sales@XYZCompany.com
-    Subject: High Volume New Item Inquiry
-
-    Dear Team,
-
-    For a summer roadshow, we would like to buy 180 Truffle Mushroom Cup Noodle units if your production supports this quantity. The volume is tied to event commitments already shared with partners, so we need an early feasibility response.
-
-    Please confirm whether this item is in your current catalog and whether the requested amount is realistic for one shipment. If not available, propose a close substitute and possible maximum quantity.
-
-    Regards,
-    Brian Yu
-    Event Procurement
-    """,
-    # 18. In list; quantity provided; request double if stock available
-    """
-    From: purchasing@metrohubstores.com
-    To: sales@XYZCompany.com
-    Subject: Flexible Quantity Request
-
-    Dear Sales Team,
-
-    Please schedule 20 Kimchi Spicy Cup Noodle for our baseline replenishment this week. If your stock position allows, we would like to double the quantity to 40 in the same shipment to support an unplanned weekend display. If doubling is not possible, please at least secure the original 20 units.
-
-    Kindly confirm what quantity can be committed today and share your earliest dispatch timing so we can finalize store communication.
-
-    Best,
-    Stanley Fung
-    Procurement Supervisor
-    """,
-    # 19. In list; quantity provided; request double causes over stock
-    """
-    From: replenishment@urbanselectgroup.com
-    To: sales@XYZCompany.com
-    Subject: Conditional Expansion Order
-
-    Hello Sales Team,
-
-    We are placing an initial order for 60 Curry Flavor Cup Noodle for our city outlets. If inventory is strong, please increase this order to double quantity, meaning 120 units total. This additional amount would support a short-term promotion requested by store operations.
-
-    Please confirm feasible quantity based on available stock and advise whether split delivery is required. We need your response by noon to finalize route planning.
-
-    Regards,
-    Felicia Mak
-    Demand Replenishment
     """
 ]
 
@@ -638,45 +490,8 @@ test_email_2 = [
     Regards,
     Winnie Ko
     Operations Buying
-    """
-]
-
-
-# Multiple order item test cases - Category B - split 1 (9)
-test_email_3_1 = [
-    # 1. Partial in list; partial quantity provided
-    """
-    From: buyteam@sunmarkethk.com
-    To: sales@XYZCompany.com
-    Subject: Mixed Completeness Order
-
-    Dear Sales Team,
-
-    Please process 20 Classic Chicken Cup Noodle as a confirmed line for our next shipment. We also need Shrimp Cup Noodle, but quantity for that second line is still pending because two stores have not submitted final demand. The second item name is abbreviated in our form and may require your catalog mapping.
-
-    Kindly confirm available stock for both lines and hold inventory where possible. We will send the missing quantity shortly.
-
-    Best regards,
-    Adam Lo
-    Purchasing Team
     """,
-    # 2. In list and partial in list; quantity provided
-    """
-    From: sourcing@brightlanegroup.com
-    To: sales@XYZCompany.com
-    Subject: Confirmed Mixed Name Order
-
-    Hello Team,
-
-    Please arrange 17 Seafood Medley Cup Noodle and 13 Curry Cup Noodle for our central warehouse. Both quantities are confirmed, while the second item uses a shortened name from our internal system. Please map it to your exact catalog record before shipping.
-
-    We would appreciate confirmation with final item names and expected dispatch date today, as transport booking closes this afternoon.
-
-    Regards,
-    Bonnie Ho
-    Strategic Sourcing
-    """,
-    # 3. In list and not in list; quantity provided
+    # 11. In list and not in list; quantity provided
     """
     From: procurement@sunlighthub.com
     To: sales@XYZCompany.com
@@ -692,7 +507,7 @@ test_email_3_1 = [
     Patrick Man
     Category Procurement
     """,
-    # 4. In list and not provided; quantity provided
+    # 12. In list and not provided; quantity provided
     """
     From: demand.buying@retailsphere.com
     To: sales@XYZCompany.com
@@ -708,23 +523,7 @@ test_email_3_1 = [
     Cheryl Law
     Demand Buying
     """,
-    # 5. In list and partial in list; quantity unclear or not provided
-    """
-    From: procurement.ops@citylinefoods.com
-    To: sales@XYZCompany.com
-    Subject: Pending Quantity Confirmation
-
-    Dear Team,
-
-    We need additional Tonkotsu Pork Cup Noodle and Shrimp Cup Noodle for the next replenishment run. At this moment, final quantities are still being reviewed by branch managers, and the second item name is abbreviated in our request.
-
-    Please reserve some stock for both lines and confirm your current availability. Once we receive the final store numbers, we will return with exact quantities and PO reference.
-
-    Best regards,
-    Edwin Chu
-    Procurement Operations
-    """,
-    # 6. In list and not in list; quantity unclear or not provided
+    # 13. In list and not in list; quantity unclear or not provided
     """
     From: buyers@highstreetgroup.com
     To: sales@XYZCompany.com
@@ -740,7 +539,7 @@ test_email_3_1 = [
     Nora Fung
     Buying Department
     """,
-    # 7. In list and not provided; quantity unclear or not provided
+    # 14. In list and not provided; quantity unclear or not provided
     """
     From: replenishment@freshcityretail.com
     To: sales@XYZCompany.com
@@ -755,352 +554,7 @@ test_email_3_1 = [
     Thank you,
     Keith Wong
     Replenishment Team
-    """,
-    # 8. Partial in list and not in list; quantity provided
-    """
-    From: sourcing@marketgateasia.com
-    To: sales@XYZCompany.com
-    Subject: Confirmed Mixed Validation Lines
-
-    Hi Team,
-
-    Please process 14 Chicken Cup Noodle and 10 Truffle Cream Cup Noodle for our test launch. Quantities are final. The first line uses a shortened product name that should map to your existing catalog, while the second line may be outside your standard assortment.
-
-    Kindly confirm accepted items and advise any substitutions needed so we can issue the final PO number this afternoon.
-
-    Best,
-    Ivy Chee
-    Strategic Buyer
-    """,
-    # 9. Partial in list and not provided; quantity provided
-    """
-    From: purchasing@starretailnetwork.com
-    To: sales@XYZCompany.com
-    Subject: Two-Line Order with Missing Item
-
-    Dear Sales Team,
-
-    Please arrange 12 Kimchi Cup Noodle for line one. For line two, quantity 8 is confirmed but product name is currently blank due to a template issue from our ERP export. Both quantities are approved and intended for the same delivery route.
-
-    Please confirm the first mapped item and advise what data is required to complete line two so we can finalize documentation quickly.
-
-    Regards,
-    Leo Chan
-    Purchasing Executive
     """
 ]
 
 
-# Multiple order item test cases - Category B - split 2 (10)
-test_email_3_2 = [
-    # 10. Partial in list and not in list; quantity unclear or not provided
-    """
-    From: demand@coremartgroup.com
-    To: sales@XYZCompany.com
-    Subject: Preliminary Mixed Product Inquiry
-
-    Hello,
-
-    We are considering Pork Cup Noodle and Lobster Bisque Cup Noodle for a short-term campaign. Final quantities are not confirmed yet, and the first item name in our note is abbreviated from your official catalog. Please help us check availability and hold stock where possible.
-
-    If the second product is not listed, kindly propose a close substitute that can ship this week. We will confirm exact quantities after internal approval.
-
-    Sincerely,
-    Pauline Tse
-    Demand Planning
-    """,
-    # 11. Partial in list and not provided; quantity unclear or not provided
-    """
-    From: ordercontrol@harborpointretail.com
-    To: sales@XYZCompany.com
-    Subject: Incomplete Item and Quantity Details
-
-    Dear Team,
-
-    We may need additional Shrimp Cup Noodle and one more noodle line for our branch refill plan. At present, the second product name is missing from our document, and both line quantities are still pending manager confirmation.
-
-    Please send your current stock view for the identifiable item and indicate the latest timing for quantity confirmation. We will complete missing fields as soon as the regional reports arrive.
-
-    Best regards,
-    Cindy Poon
-    Order Control
-    """,
-    # 12. Not in list and not provided; quantity provided
-    """
-    From: categorybuy@novaretail.hk
-    To: sales@XYZCompany.com
-    Subject: Trial Line Plus Missing Product
-
-    Dear Sales Team,
-
-    Please arrange two lines for a trial shipment: 9 Black Garlic Cup Noodle and a second line with quantity 7 where product name is currently unavailable in our request form. Quantities are fixed and approved by our pilot-store team.
-
-    Kindly confirm whether the named product is part of your assortment and advise how we should complete the missing line to proceed. We prefer dispatch within this week if possible.
-
-    Regards,
-    Samuel Hui
-    Category Buyer
-    """,
-    # 13. Not in list and not provided; quantity unclear or not provided
-    """
-    From: planning@easthavenstores.com
-    To: sales@XYZCompany.com
-    Subject: Early Stage Product Inquiry
-
-    Hi Sales Team,
-
-    Our team is exploring a new noodle line, Truffle Corn Cup Noodle, and another yet-to-be-specified item for a potential promotion. We do not have final quantities for either line at this moment because store enrollment is still open.
-
-    Please advise if the named item is available and what comparable products you can suggest. We will return with complete item details and quantities after internal review.
-
-    Thank you,
-    Maggie Lai
-    Planning Department
-    """,
-    # 14. In list and in list by SKU; quantity provided
-    """
-    From: buyerdesk@freshworldgroup.com
-    To: sales@XYZCompany.com
-    Subject: Name and SKU Combined Order
-
-    Dear Team,
-
-    Please process 18 Curry Flavor Cup Noodle and 14 units of SKU1003 for this week's replenishment. Both quantities are confirmed and should ship together to our Tsing Yi facility. We intentionally used product name on one line and SKU on the other to match our internal workflow.
-
-    Kindly confirm stock availability for both references and share expected dispatch date so we can lock transport allocation.
-
-    Best,
-    Derek Yau
-    Buyer Desk
-    """,
-    # 15. In list and in list by SKU; quantity unclear or not provided
-    """
-    From: procurement@marketbridgehk.com
-    To: sales@XYZCompany.com
-    Subject: Flexible Two-Line Reservation
-
-    Hello Sales Team,
-
-    We are preparing a replenishment for Shrimp Flavor Cup Noodle and SKU1008. Final quantities are still being confirmed by operations, so please reserve some stock for both lines while we complete demand validation.
-
-    Please share your current available quantities and cut-off time for this dispatch cycle. We will provide exact numbers as soon as branch approvals are completed.
-
-    For internal tracking, please also indicate whether partial shipment by line is allowed under your current logistics policy.
-
-    Regards,
-    Fiona Yik
-    Procurement Specialist
-    """,
-    # 16. In list and over stock item; quantity provided
-    """
-    From: promo.buying@maxwayretail.com
-    To: sales@XYZCompany.com
-    Subject: Standard Plus High-Volume Mix
-
-    Dear Sales Team,
-
-    Please arrange 20 Vegetable Garden Cup Noodle and 125 Classic Chicken Cup Noodle for our upcoming promotional cycle. Both quantities are confirmed in our campaign brief. The first line is routine replenishment, while the second reflects a high-volume event requirement.
-
-    Kindly confirm what can be fulfilled immediately and whether split shipment is possible for any shortfall. We need your reply today to finalize in-store communication.
-
-    Sincerely,
-    Veronica Ma
-    Promo Buying
-    """,
-    # 17. In list by SKU and not in list; quantity provided
-    """
-    From: purchasing@urbanbasketchain.com
-    To: sales@XYZCompany.com
-    Subject: SKU Plus Trial Flavor Order
-
-    Dear Team,
-
-    Please process 21 units of SKU1002 and 10 Truffle Mushroom Cup Noodle for our mixed replenishment and trial program. Quantities are finalized and approved. The SKU line should map directly to your listed product, while the second line may require availability confirmation.
-
-    Please advise if the trial flavor can be supplied and suggest a substitute if not. We would like shipment to depart by Friday.
-
-    Best regards,
-    Connie Law
-    Purchasing Department
-    """,
-    # 18. In list by SKU and not provided; quantity provided
-    """
-    From: central.order@lakeviewretail.com
-    To: sales@XYZCompany.com
-    Subject: One SKU Line and One Missing Product
-
-    Hi Sales Team,
-
-    Please arrange 24 units of SKU1007. Also, range 6 units for the product purchased last time. Both lines belong to the same replenishment batch and should be shipped together if possible.
-
-    Kindly confirm the SKU line and advise what additional information is needed for the unnamed line so we can submit a corrected PO immediately.
-
-    Regards,
-    Tammy Koo
-    Central Order Team
-    """,
-    # 19. In list plus conflicting SKU items; quantity provided
-    """
-    From: sourcing@primecirclefoods.com
-    To: sales@XYZCompany.com
-    Subject: Conflict Check for Two Lines
-
-    Dear Sales Team,
-
-    Please process these confirmed lines: 13 Seafood Medley Cup Noodle labeled with SKU1001, and 11 Classic Chicken Cup Noodle labeled with SKU1003. Quantities are approved, but our template appears to contain cross-assigned SKU codes from a prior sheet.
-
-    Kindly validate each line using your standard controls and confirm which item-SKU pair will be accepted for fulfillment. We need corrected confirmation for finance posting today.
-
-    Thank you,
-    Marco Leung
-    Sourcing Manager
-    """
-]
-
-# Additional validation focused combinations (8)
-test_email_4 = [
-    # 1. Same company with different sender local parts
-    """
-    From: amy@ABCcompany.com
-    To: sales@XYZCompany.com
-    Subject: Monthly Replenishment from ABCcompany
-
-    Dear Sales Team,
-
-    This is Amy from ABCcompany central procurement. Please arrange 18 Shrimp Flavor Cup Noodle for our monthly restock to warehouse A. Our colleague from procurement@ABCcompany.com usually handles this account, but I am covering this cycle while she is on leave.
-
-    Please keep the same billing profile and delivery address used in our previous confirmed orders. Kindly reply with stock confirmation and expected shipment date.
-
-    Best regards,
-    Amy Chow
-    ABCcompany Procurement
-    """,
-    # 2. Mixed case domain name
-    """
-    From: Alex@CloThcompany.com
-    To: sales@XYZCompany.com
-    Subject: Restock Request for Retail Floor Reset
-
-    Hello Sales Team,
-
-    We are preparing a floor reset this weekend and need 20 Tonkotsu Pork Cup Noodle for our flagship store. Quantity is confirmed by operations and should be delivered under our regular credit terms. Please include SKU and item name on the packing list for receiving speed.
-
-    Kindly confirm availability and earliest dispatch time. If there is any shortage, please share the maximum shippable quantity so we can adjust display plans.
-
-    Regards,
-    Alex Wong
-    Clothcompany Buying Office
-    """,
-    # 3. Subdomain address
-    """
-    From: buyer@apac.ABCcompany.com
-    To: sales@XYZCompany.com
-    Subject: APAC Warehouse Replenishment
-
-    Dear Sales Colleagues,
-
-    Please process a confirmed order for 22 Classic Chicken Cup Noodle and 14 units of SKU1008 for our APAC distribution center. Both quantities are approved and should be dispatched together this week. We are using our regional subdomain mailbox for this transaction due to routing updates.
-
-    Kindly provide stock confirmation, ship date, and total amount so our finance team can pre-approve payment release.
-
-    Best regards,
-    Jason P.
-    APAC Procurement
-    """,
-    # 4. Signature name uses domain name company while sender is procurement@ABCcompany.com
-    """
-    From: procurement@ABCcompany.com
-    To: sales@XYZCompany.com
-    Subject: Standard Restock Request
-
-    Dear Sales Team,
-
-    Please arrange 16 Seafood Medley Cup Noodle for our routine replenishment this week. Quantity and destination are confirmed according to our standing plan. We would appreciate dispatch by Thursday so store backrooms can receive before weekend traffic.
-
-    Kindly send your order confirmation with invoice estimate and lead time. If any adjustment is needed, please call our office before noon.
-
-    This message should be treated as an official request from our company mailbox and matched to our standard customer profile.
-
-    Thank you,
-    Domain Name Procurement
-    """,
-    # 5. Price/subtotal check with decimal price
-    """
-    From: purchasing@retailpilot.com
-    To: sales@XYZCompany.com
-    Subject: Decimal Price Validation Order
-
-    Dear Team,
-
-    Please process 10 Seafood Medley Cup Noodle for our test order. In our draft PO, unit price is entered as 175.50 for internal validation of decimal handling, and expected subtotal is listed as 1755.00 before tax. Quantity is confirmed and shipment can follow standard terms.
-
-    Kindly confirm your accepted unit price and line subtotal format in the confirmation document, as our finance team is testing decimal parsing in the new intake workflow.
-
-    Regards,
-    Felix Kan
-    Procurement Systems User
-    """,
-    # 6. Total check: integer + decimal unit price in multi-item order
-    """
-    From: ops.buying@quantummart.com
-    To: sales@XYZCompany.com
-    Subject: Multi-Line Total Verification
-
-    Dear Sales Team,
-
-    Please arrange 8 Classic Chicken Cup Noodle at 150 each and 6 Shrimp Flavor Cup Noodle at 175.25 each for our system validation purchase. Our expected pre-tax total is 1951.50, and quantities are fully approved. This order is intended to verify total calculations across integer and decimal unit prices.
-
-    Please confirm line subtotals and grand total in your reply, together with shipment date and invoice reference format.
-
-    Best,
-    Natalie Fung
-    Operations Buying
-    """
-]
-
-test_email_pending = [    
-    # 7. Translation scenario
-    """
-    From: takahashi@globalretail.jp
-    To: sales@XYZCompany.com
-    Subject: 日本語での発注依頼
-
-    XYZCompany 営業ご担当者様
-
-    いつもお世話になっております。Global Retail Procurement の高橋です。
-    東京エリアの小売向け在庫補充として、カレーフレーバーのカップヌードルを12個発注いたします。
-    在庫に問題がなければ、来週水曜日までに弊社保税倉庫へ納品いただけますでしょうか。
-
-    今回は日本側販促日程に合わせた手配のため、納期確約を優先して確認したく存じます。
-    数量は12で確定しており、変更予定はありません。
-    可能であれば、出荷予定日、請求書番号の記載形式、ならびに確定金額をご返信ください。
-
-    社内経理処理の都合上、返信時には数量・納品予定日・明細金額を明記いただけると助かります。
-    何卒よろしくお願いいたします。
-
-    敬具
-    高橋 由紀
-    Global Retail Procurement
-    """
-    ,
-    # 8. Translation scenario
-    """
-    From: chen.lihua@easternretail.cn
-    To: sales@XYZCompany.com
-    Subject: 中文订单请求
-
-    XYZCompany 销售团队您好：
-
-    我是 Eastern Retail 采购部的陈丽华。为了下周门店补货，请为我们安排采购 15 箱海鲜风味杯面。
-    该数量已经由营运团队确认，如库存充足，请于下周二前送达我司深圳仓库。
-
-    另外，请在回复中确认预计出货日期、单价、订单小计以及含税总金额，方便我们完成内部审批。
-    如果当前库存不足，也请告知可供应数量以及最早补货时间。
-
-    感谢配合，期待您的确认回复。
-
-    此致
-    敬礼
-    陈丽华
-    Eastern Retail 采购部
-    """]

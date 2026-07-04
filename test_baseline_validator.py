@@ -1,5 +1,5 @@
 import requests
-from email_data import mock_email, test_email_1_1, test_email_1_2, test_email_2, test_email_3_1, test_email_3_2, test_email_4
+from email_data import mock_email, test_email_1, test_email_2
 from general_information.product_lists import product_list
 from validator_component.order_validator import order_validation
 

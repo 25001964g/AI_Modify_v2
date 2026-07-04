@@ -1,6 +1,6 @@
 import requests
 from validator_component.order_validator import order_validation
-from email_data import mock_email
+from email_data import mock_email, test_email_1, test_email_2
 from general_information.product_lists import product_list
 from general_information.format_order import add_format
 from name_detection_component.name_detect import name_detection
