@@ -2,6 +2,8 @@ import requests
 from test_email.mock_emails import mock_email
 from test_email.single_product import test_email_1
 from test_email.multiple_product import test_email_2
+from test_email.language_single_product import test_email_3
+from test_email.language_multiple_product import test_email_4
 from general_information.product_lists import product_list
 from general_information.status_list import status
 
@@ -54,3 +56,5 @@ def baseline(email, product_list, status):
 #baseline(mock_email, product_list, status)
 baseline(test_email_1, product_list, status)
 #baseline(test_email_2, product_list, status)
+#baseline(test_email_3, product_list, status)
+#baseline(test_email_4, product_list, status)
