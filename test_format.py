@@ -1,10 +1,10 @@
 import requests
-from email_data import mock_email
+from email_data import mock_email, test_email_1_1, test_email_1_2, test_email_2, test_email_3_1, test_email_3_2, test_email_4
 from general_information.product_lists import product_list
 from general_information.status_list import status
 from general_information.formatting import json_structure
 
-def add_format (email):
+def baseline_format (email, product_list, status):
     for i, current_email in enumerate(email):
         print(f"processing mock email {i+1}")
         added_format = requests.post("http://localhost:11434/api/generate", json={
@@ -54,5 +54,5 @@ def add_format (email):
         print(added_format.json()["response"])
         print("==================================")
 
-add_format(mock_email)
+baseline_format(mock_email, product_list, status)
 

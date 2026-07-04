@@ -1,9 +1,9 @@
 import requests
-from order_validator import order_validation
+from validator_component.order_validator import order_validation
 from email_data import mock_email
 from general_information.product_lists import product_list
 from general_information.format_order import add_format
-from name_detect import name_detection
+from name_detection_component.name_detect import name_detection
 
 def modifier(email):
     for i, current_email in enumerate(email):
