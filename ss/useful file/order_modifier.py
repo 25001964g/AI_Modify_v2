@@ -2,7 +2,7 @@ import requests
 from order_validator import order_validation
 from email_data import mock_email
 from general_information.product_lists import product_list
-from general_information.format_order import add_format
+from combined_component.c_format_order import add_format
 from name_detect import name_detection
 import json
 import pandas as pd

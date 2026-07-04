@@ -1,8 +1,8 @@
 import requests
-from validator_component.order_validator import order_validation
+from combined_component.c_order_validator import order_validation
 from email_data import mock_email, test_email_1, test_email_2
 from general_information.product_lists import product_list
-from general_information.format_order import add_format
+from combined_component.c_format_order import add_format
 from name_detection_component.name_detect import name_detection
 
 def modifier(email):
@@ -42,7 +42,7 @@ def modifier(email):
         * "sku": Map the assigned internal SKU value.
         * "price": Map the designated per-item catalog pricing decimal value.
         * "subtotal": Map the calculated item row total value.
-        * "status": Map the evaluated operational flag (e.g., "valid", "unlisted", "ambiguous", "not enough stock").
+        * "status": Map the evaluated operational flag (e.g., "valid", "unlisted", "ambiguous", "not enough stock") and you MUST show it in the output.
     4. Aggregate Mathematical Total: Calculate the final top-level "total" field. This must equal the strict mathematical sum of all individual item "subtotal" values in the array. Do not infer or hardcode a static figure.
     5. Language Requirement: All information for the order should be in English.
 

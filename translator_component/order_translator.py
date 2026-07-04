@@ -1,8 +1,7 @@
 import requests
-from email_data import mock_email
 
 #Harness: Identify missing/ambiguous parameters before extraction
-def item_extract_plain(email):
+def item_translated(email, product_list):
     #This acts as an initial control step to steer the extraction
     extract_prompt = f"""
 You are an administrative data extraction engine. Your sole job is to read an order email and extract the requested items.
@@ -10,17 +9,33 @@ You are an administrative data extraction engine. Your sole job is to read an or
 [ORDER EMAIL]
 {email}
 
+[product list]
+{product_list}
+
 [CRITICAL INSTRUCTIONS]
 1. Read the email and identify the a list of requested products and their quantities.
 2. Quantity must be float type. If a quantity is missing or generic (e.g., "some", "a few"), set the quantity value to null.
 3. Output ONLY a valid JSON object matching the template layout below. Do not use markdown backticks (```). Do not include chat preamble or notes.
-4. Detect the language of the email above.
-5. If the email is NOT in English, translate the full email to English.
-6. If the email IS already in English.
+4. If the email is NOT in English, translate the full email to English and you MUST map and use the product_name in [product list].
+5. If the email IS already in English.
 
 [OUTPUT LAYOUT]
-### extracted line items
-*Product Name: [Name of product] | Quantity: [Number requested]
+if one product ordered only, return:
+{{
+  "customer_name":[Entity Name of Customer],
+  "items": [
+    {{"product_name": "exact name from product list", "quantity": Number or null}}
+  ]
+}}
+
+if multiple products ordered, return:
+{{
+  "customer_name":[Entity Name of Customer],
+  "items": [
+    {{"product_name": "exact name from product list", "quantity": Number or null}},
+    {{"product_name": "exact name from product list", "quantity": Number or null}}
+  ]
+}}
 """
 
     order_extracted = requests.post("http://localhost:11434/api/generate", json={
@@ -37,5 +52,3 @@ You are an administrative data extraction engine. Your sole job is to read an or
 
     order_list = order_extracted.json()["response"]
     return order_list
-
-print(item_extract_plain(mock_email[7]))

@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
 import json
-from order_extractor import item_extract
+from combined_component.c_order_translator import item_translated
 
 def order_validation (email, product_list):
     #Get the structured JSON string from your Ollama request response
-    order_list = item_extract(email)
+    order_list = item_translated(email, product_list)
     try:
         #Load json formatted data to pandas dataframe
         extracted_data = json.loads(order_list)
