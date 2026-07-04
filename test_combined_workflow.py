@@ -1,11 +1,13 @@
 import requests
 from combined_component.c_order_validator import order_validation
-from email_data import mock_email, test_email_1, test_email_2
+from test_email.mock_emails import mock_email
+from test_email.single_product import test_email_1
+from test_email.multiple_product import test_email_2
 from general_information.product_lists import product_list
 from combined_component.c_format_order import add_format
 from name_detection_component.name_detect import name_detection
 
-def modifier(email):
+def combined_workflow(email):
     for i, current_email in enumerate(email):
         print(f"Processing mock email {i+1}")
         # Detect suitable customer name
@@ -59,4 +61,6 @@ def modifier(email):
         print(resp.json()["response"])
         print("==================================")
         
-modifier(mock_email)
+#combined_workflow(mock_email)
+combined_workflow(test_email_1)
+#combined_workflow(test_email_2)

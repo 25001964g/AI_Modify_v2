@@ -1,5 +1,7 @@
 import requests
-from email_data import mock_email, test_email_1, test_email_2
+from test_email.mock_emails import mock_email
+from test_email.single_product import test_email_1
+from test_email.multiple_product import test_email_2
 from general_information.product_lists import product_list
 from general_information.status_list import status
 from general_information.formatting import json_structure
@@ -54,5 +56,6 @@ def baseline_format (email, product_list, status):
         print(added_format.json()["response"])
         print("==================================")
 
-baseline_format(mock_email, product_list, status)
-
+#baseline_format(mock_email, product_list, status)
+baseline_format(test_email_1, product_list, status)
+#baseline_format(test_email_2, product_list, status)
