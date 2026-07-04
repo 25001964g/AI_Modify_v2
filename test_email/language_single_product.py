@@ -1,164 +1,164 @@
 test_email_3 = [
-    # 1. En lista; cantidad proporcionada (Spanish)
+    # 1. In list; quantity provided (Chinese)
     """
-    De: purchasing@northvaleretail.com
-    Para: sales@XYZCompany.com
-    Asunto: Solicitud de reposición semanal
-
-    Estimado equipo de ventas,
-
-    Estamos preparando la promoción de la próxima semana en la tienda de conveniencia y necesitamos una reposición confirmada. Por favor, organicen 24 Classic Chicken Cup Noodle para nuestro almacén de Kowloon. Esta cantidad fue aprobada por nuestro gerente de categoría y coincide con el plan de reorganización de estanterías. Les rogamos mantener su embalaje estándar de cartón de exportación e incluir el código del artículo en la factura comercial para facilitar la recepción.
-
-    Si hay stock disponible, agradeceríamos el despacho para el jueves por la tarde. Por favor, confirmen disponibilidad, fecha de envío prevista y monto final.
-
-    Atentamente,
-    Martin Lee
-    Oficial de Compras
-    """,
-    # 2. En liste; quantité non claire ou non fournie (French)
-    """
-    De: buyer.team@harborchain.com
-    À: sales@XYZCompany.com
-    Objet: Réapprovisionnement urgent de Cup Noodle
-
-    Bonjour équipe des ventes,
-
-    Nos superviseurs de succursale ont signalé une forte demande pour le Spicy Beef Cup Noodle cette semaine. Veuillez nous envoyer du stock supplémentaire pour un réapprovisionnement immédiat. Nous n’avons pas encore le nombre final de cartons car deux magasins doivent encore soumettre leurs chiffres de consommation, mais nous avons besoin que l’expédition parte dès que possible.
-
-    Merci de réserver l’inventaire maintenant et de partager votre premier créneau de livraison. Une fois le décompte interne approuvé, nous répondrons avec la quantité confirmée dans le même fil.
-
-    Cordialement,
-    Chloe Wong
-    Département des achats
-    """,
-    # 3. Produkt nicht angegeben; Menge angegeben (German)
-    """
-    Von: ordering@sunrisefoodsupply.com
-    An: sales@XYZCompany.com
-    Betreff: Standard-Nachbestellmenge
-
-    Sehr geehrtes Team,
-
-    Bitte bearbeiten Sie eine Nachbestellung von 18 Kartons aus Ihrem Cup-Noodle-Sortiment für unsere städtischen Filialen. Die Menge ist bestätigt und sollte gemäß unseren regulären Kontobedingungen versendet werden. Unser Merchandising-Team hat vergessen, den genauen Geschmack in dieser Anfrage zu notieren, aber die Menge ist festgelegt und von der Finanzabteilung für diesen Zyklus genehmigt.
-
-    Bitte bestätigen Sie den Erhalt dieser Nachricht und teilen Sie uns mit, welche Produktdetails Sie noch benötigen, damit wir die Artikelbestätigung schnell abschließen und Versandverzögerungen vermeiden können.
-
-    Mit freundlichen Grüßen,
-    Andrew Ho
-    Supply Planning
-    """,
-    # 4. Non in elenco; quantità fornita (Italian)
-    """
-    Da: procurement@greenbasketmart.com
-    A: sales@XYZCompany.com
-    Oggetto: Acquisto di prova nuovo gusto
-
-    Ciao team vendite,
-
-    Vorremmo effettuare un ordine di prova di 12 Tomato Basil Cup Noodle per alcuni negozi premium selezionati. La quantità è ridotta perché si tratta di un test di mercato legato a schede di feedback dei clienti. Se l’articolo è disponibile, vi preghiamo di indicare i tempi di consegna e confermare se consentite pallet con gusti misti.
-
-    Se il prodotto non fa parte del vostro catalogo attuale, fateci sapere l’alternativa più vicina disponibile così il nostro team potrà rivedere la nota di lancio oggi stesso.
-
-    Grazie,
-    Irene Cheung
-    Buyer di categoria
-    """,
-    # 5. Продукт не указан; количество неясно или не предоставлено (Russian)
-    """
-    От: sourcing@metrochoicegroup.com
-    Кому: sales@XYZCompany.com
-    Тема: Запрос на пополнение запасов
-
-    Уважаемые коллеги по продажам,
-
-    Нам необходимо пополнить запасы Cup Noodle для нашей кампании выходного дня и мы хотели бы разместить заказ в ближайшее время. На данный момент наша команда знает только то, что требуется несколько дополнительных коробок, но детали продукта и точное количество еще ожидаются от региональных менеджеров. Пожалуйста, помогите нам зарезервировать небольшую партию, чтобы мы могли оформить заказ после завершения внутреннего утверждения.
-
-    Просим ответить о текущей ситуации со складом и крайним сроком для отправки на следующий день, чтобы мы могли завершить заявку на покупку без потери времени кампании.
-
-    С уважением,
-    Peter Ng
-    Команда закупок
-    """,
-    # 6. 未在清单中；数量不明确或未提供 (Chinese - Simplified)
-    """
-    发件人: demand.planning@dailycart.hk
+    发件人: supply@northvaleretail.com
     收件人: sales@XYZCompany.com
-    主题: 季节性口味方便面询问
+    主题: 每周补货请求
 
-    您好，
+    亲爱的销售团队，
 
-    我们的产品团队正在寻找味噌玉米杯面，用于主题促销，如果有供应希望能购买一些。由于门店报名仍在进行，我们尚未确认数量，但需要在明天上午前得到初步回复以便规划。
+    我们正在准备下周的便利店促销，需要确认补货。请安排24箱经典鸡肉杯面送至九龙仓库。此数量已由品类经理批准，并符合货架重置计划。请保持标准出口纸箱包装，并在商业发票中包含商品代码以便收货。
 
-    请告知该SKU是否在您产品系列中，如不可供货，请推荐口味相近且交期相似的替代品。
+    如果有库存，我们希望能在周四下午发货。请确认库存情况、预计发货日期和最终金额。
 
     此致，
-    Vivian Lau
-    采购分析师
+    王志强
+    采购专员
     """,
-    # 7. 在列表中按SKU；数量已提供 (Japanese)
+    # 2. In list; quantity unclear (Chinese)
     """
-    差出人: purchasing.ops@eastbridgefoods.com
+    发件人: purchase@harborchain.com
+    收件人: sales@XYZCompany.com
+    主题: 紧急杯面补货
+
+    销售团队您好，
+
+    我们的分店主管报告本周辣味牛肉杯面销售快速。请立即为我们发送一些额外库存以补货。由于两家门店仍在提交消费数据，我们暂时没有最终的纸箱数量，但需要尽快发货。
+
+    请立即预留库存并告知最早的交货时间。一旦内部数量确认，我们将在同一邮件线程中回复最终数量。
+
+    谨上，
+    李美玲
+    采购部
+    """,
+    # 3. Product not provided; quantity provided (Chinese)
+    """
+    发件人: orders@sunrisefoodsupply.com
+    收件人: sales@XYZCompany.com
+    主题: 标准补货数量
+
+    亲爱的团队，
+
+    请为我们的城市门店处理18箱杯面补货。数量已确认，应按照常规账户条款发货。我们的陈列团队忘记在此请求中注明具体口味，但数量已固定并由财务批准。
+
+    请确认收到此消息，并告知还需要哪些产品细节，以便我们快速完成确认，避免发货延迟。
+
+    此致，
+    陈伟
+    供应计划
+    """,
+    # 4. Not in list; quantity provided (Chinese)
+    """
+    发件人: category@greenbasketmart.com
+    收件人: sales@XYZCompany.com
+    主题: 新口味试购
+
+    销售团队您好，
+
+    我们希望为部分高端门店试购12箱番茄罗勒杯面。数量较少，因为这是一个市场试验，结合顾客反馈卡。如果该商品可供货，请报价交货时间，并确认是否允许混合口味托盘。
+
+    如果该产品不在您当前目录中，请告知最接近的替代品，以便我们今天修改上市备忘录。
+
+    谢谢，
+    周丽
+    品类采购员
+    """,
+    # 5. Product not provided; quantity unclear (Chinese)
+    """
+    发件人: team@metrochoicegroup.com
+    收件人: sales@XYZCompany.com
+    主题: 跟进补货请求
+
+    亲爱的销售同事们，
+
+    我们需要为周末活动补充杯面，并希望尽快下单。目前我们只知道需要一些额外的纸箱，但具体产品和数量仍在等待区域经理确认。请帮助我们预留一小部分库存，以便内部批准完成后锁定订单。
+
+    请回复当前库存情况和次日发货的截止时间，以便我们及时完成采购请求，不错过活动窗口。
+
+    此致，
+    刘建华
+    采购团队
+    """,
+    # 6. Not in list; quantity unclear (Japanese)
+    """
+    差出人: planning@dailycart.hk
+    宛先: sales@XYZCompany.com
+    件名: 季節限定ヌードルの問い合わせ
+
+    営業チーム各位
+
+    当社の商品チームはテーマプロモーション用に味噌コーンカップヌードルを探しており、供給可能であれば購入したいと考えています。店舗参加がまだ進行中のため数量は未確定ですが、明日午前までに計画用の初期回答が必要です。
+
+    このSKUが御社の品揃えに存在するかどうか、また入手不可の場合は類似の味わいとリードタイムを持つ代替品を教えてください。
+
+    敬具
+    佐藤健
+    調達アナリスト
+    """,
+    # 7. In list by SKU; quantity provided (Japanese)
+    """
+    差出人: ops@eastbridgefoods.com
     宛先: sales@XYZCompany.com
     件名: SKUによる発注依頼
 
     営業チーム各位
 
-    月次補充サイクルのため、SKU1004を30ユニット手配してください。数量と配送先倉庫は確認済みで、通常通り契約 EB-24-Q3 に基づいて請求されるべきです。受け取りチームは、チェックイン時間を短縮するため、SKUと英語の商品名を記載したカートンラベルを希望しています。
+    月次補充サイクルのため、SKU1004を30ユニット手配してください。数量と配送先倉庫は確認済みで、通常通り契約EB-24-Q3に基づいて請求されるべきです。受け取りチームは、チェックイン時間を短縮するため、SKUと日本語の商品名「エビ風味カップヌードル」を記載したカートンラベルを希望しています。
 
     ご注文確認と出荷予定日をご送付ください。もし在庫が希望数量と異なる場合は、その旨もお知らせください。
 
     ご協力ありがとうございます。
 
     敬具
-    Kelvin Chan
+    高橋直子
     調達リード
     """,
-    # 8. En lista por SKU; cantidad no clara o no proporcionada (Portuguese)
+    # 8. In list by SKU; quantity unclear (Japanese)
     """
-    De: buyer@harvestnetwork.com
-    Para: sales@XYZCompany.com
-    Assunto: Reserva provisória de SKU
+    差出人: buyer@harvestnetwork.com
+    宛先: sales@XYZCompany.com
+    件名: SKU仮予約
 
-    Olá equipe,
+    営業チーム各位
 
-    Podemos precisar de estoque adicional do SKU1006 para a próxima temporada de festas. O número final ainda está em revisão, mas por favor reservem alguma quantidade para nós, se possível, para não ficarmos sem estoque no fim do mês. Os gerentes das filiais estão enviando previsões revisadas esta noite.
+    近日のホリデーラッシュに備え、SKU1006（ベジタブルガーデンカップヌードル）の追加在庫が必要になる可能性があります。最終数量はまだ審査中ですが、可能であれば在庫を確保してください。支店マネージャーは今夜修正予測を提出します。
 
-    Poderiam compartilhar a disponibilidade atual e a janela de alocação recomendada? Voltaremos com a quantidade exata de compra assim que as verificações internas forem concluídas.
+    現在の在庫状況と推奨される割当期間を共有いただけますか。内部チェックが完了次第、正確な購入数量をお知らせします。
 
-    Atenciosamente,
-    Susan Yip
-    Compras Centrais
+    敬具
+    山本真由美
+    中央購買
     """,
-    # 9. En lista; sobre stock (>100) (Arabic)
+    # 9. In list; over stock (Japanese)
     """
-    من: procurement@citymaxretail.com
-    إلى: sales@XYZCompany.com
-    الموضوع: طلب كمية كبيرة
+    差出人: procurement@citymaxretail.com
+    宛先: sales@XYZCompany.com
+    件名: 大量注文依頼
 
-    فريق المبيعات المحترم،
+    営業チーム各位
 
-    نحن نطلق حملة خصومات على مستوى السلسلة ونرغب في تقديم طلب لـ 130 عبوة من Seafood Medley Cup Noodle للتسليم الفوري. هذه الكمية مرتبطة بآليات الترويج المطبوعة بالفعل في منشورنا، لذلك نأمل في تأمين المخزون بسرعة.
+    全店舗割引イベントを開始するため、シーフードメドレーカップヌードルを130ユニット即時納品で注文したいと考えています。この数量は既に印刷された販促資料に基づいているため、迅速な在庫確保を希望します。
 
-    يرجى تأكيد ما إذا كان يمكن شحن الكمية الكاملة دفعة واحدة. إذا كان لابد من تنفيذ جزئي، شاركوا أقصى كمية متاحة وأقرب تاريخ للباقي حتى يتمكن فريق العمليات لدينا من تعديل خطط الرفوف.
+    全数量を一括出荷できるかどうか確認してください。部分的な対応が必要な場合は、最大供給可能数量と残りの最短納期を共有いただき、棚計画を調整できるようにしてください。
 
-    مع خالص التحية،
-    Gary Poon
-    مشتري، البقالة الجافة
+    敬具
+    中村浩
+    バイヤー（ドライグローサリー）
     """,
-    # 10. En lista; cantidad inválida (0 / negativa / decimal) (Korean)
+    # 10. In list; invalid quantity (Japanese)
     """
-    발신: planning@dailyharvestgroup.com
-    수신: sales@XYZCompany.com
-    제목: 조정 요청
+    差出人: planning@dailyharvestgroup.com
+    宛先: sales@XYZCompany.com
+    件名: 数量調整依頼
 
-    영업팀 여러분께,
+    営業チーム各位
 
-    이전 요청을 업데이트하고 있으며 현재 이번 사이클의 초안 라인에 0 Vegetable Garden Cup Noodle이 기재되어 있습니다. 이 수량이 주문 워크시트에 남아 있어야 하는지, 아니면 최종 확인 전에 제거해야 하는지 확인 부탁드립니다. 해당 수량은 반품 조정 후 자동 계산에서 나온 것입니다.
+    以前の依頼を更新しており、現在このサイクルのドラフトラインに0 ベジタブルガーデンカップヌードルが記載されています。注文ワークシートに残すべきか、最終確認前に削除すべきか確認してください。この数量は返品調整後の自動計算から出たものです。
 
-    유효한 수량에 대한 귀사의 요구 형식을 알려주시면 저희 팀이 즉시 수정하여 구매 요청을 다시 발행할 수 있습니다.
+    有効な数量に関する御社のフォーマットを教えていただければ、当チームは即座に修正し、購入依頼を再発行できます。
 
-    감사합니다,
-    Anita Lam
-    재고 계획
+    敬具
+    鈴木花子
+    在庫計画
     """
 ]

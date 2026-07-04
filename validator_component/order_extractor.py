@@ -6,6 +6,8 @@ def item_extract(email):
     extract_prompt = f"""
 You are an administrative data extraction engine. Your sole job is to read an order email and extract the requested items into raw JSON.
 
+critical no-hallucination requirement: you are strictly forbidden from inventing, hallucinating, or pulling product data from outside the provided reference blocks. do not generate fake or placeholder data under any circumstances.
+
 [ORDER EMAIL]
 {email}
 

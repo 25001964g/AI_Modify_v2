@@ -1,162 +1,226 @@
 test_email_4 = [
-    # 1. All in list; quantity provided (Spanish)
+    # 1. All in list; quantity provided (Chinese)
     """
-    De: centralbuy@northgatecommerce.com
-    Para: sales@XYZCompany.com
-    Asunto: Pedido de reposición multiartículo
-
-    Estimado equipo de ventas,
-
-    Por favor procesen el siguiente pedido confirmado para entrega la próxima semana: 14 Classic Chicken Cup Noodle, 12 Seafood Medley Cup Noodle y 10 Vegetable Garden Cup Noodle. Todas las cantidades están aprobadas y alineadas con la planificación de espacio en estanterías en tres tiendas piloto.
-
-    Mantengan los artículos en cajas separadas con etiquetas y incluyan las referencias de SKU en la lista de empaque para mayor precisión. Confirmen stock y fecha de despacho hoy para que nuestro socio logístico pueda reservar un camión.
-
-    Atentamente,
-    Carol Sin
-    Compras Centrales
-    """,
-    # 2. All in list; quantity unclear (French)
-    """
-    De: buyer.ops@sunplazaretail.com
-    À: sales@XYZCompany.com
-    Objet: Demande multi‑articles provisoire
-
-    Bonjour équipe,
-
-    Nous avons besoin d’un réapprovisionnement pour Classic Chicken Cup Noodle, Curry Flavor Cup Noodle et Kimchi Spicy Cup Noodle. À ce stade, les quantités exactes ne sont pas prêtes car elles sont encore consolidées au niveau des succursales. Veuillez réserver du stock pour ces trois articles pendant que nous finalisons la planification interne.
-
-    Pourriez‑vous partager la disponibilité actuelle et votre dernière heure limite pour l’expédition de cette semaine ? Nous reviendrons avec les quantités finales après l’approbation financière.
-
-    Cordialement,
-    Oscar Cheng
-    Opérations d’achat
-    """,
-    # 3. All partial in list; quantity provided (German)
-    """
-    Von: orderdesk@harvestretailers.com
-    An: sales@XYZCompany.com
-    Betreff: Teilweise Namensbestellung mehrerer Artikel
-
-    Sehr geehrtes Verkaufsteam,
-
-    Bitte arrangieren Sie diese bestätigte Bestellung für unser Convenience‑Netzwerk: 15 Chicken Cup Noodle, 11 Seafood Cup Noodle und 9 Kimchi Cup Noodle. Die Mengen sind festgelegt und genehmigt, aber unser internes Dokument verwendet verkürzte Produktnamen.
-
-    Bitte ordnen Sie jede Zeile Ihrem genauen Katalogprodukt zu und zeigen Sie die endgültigen Artikelnamen auf der Bestätigung. Lieferung wird für Freitagmorgen an unser Hauptlager angefordert.
-
-    Vielen Dank,
-    Emily Kwan
-    Einkaufskoordinatorin
-    """,
-    # 4. All partial in list; quantity unclear (Italian)
-    """
-    Da: sourcing.team@cityretailhub.com
-    A: sales@XYZCompany.com
-    Oggetto: Rifornimento preliminare assortimento
-
-    Ciao team vendite,
-
-    Stiamo pianificando di rifornire Chicken Cup Noodle, Shrimp Cup Noodle e Pork Cup Noodle per una promozione regionale. I nomi nella nostra richiesta sono abbreviati e le quantità finali sono ancora in attesa dai responsabili di area. Vi chiediamo di riservare un po’ di stock sotto questi gruppi di articoli mentre completiamo l’allocazione.
-
-    Rispondete con le opzioni disponibili e i tempi di consegna per articolo così possiamo chiudere l’ordine ufficiale oggi.
-
-    Cordiali saluti,
-    Jason Hui
-    Sourcing Strategico
-    """,
-    # 5. All not in list; quantity provided (Russian)
-    """
-    От: procurement@nextwavefoods.com
-    Кому: sales@XYZCompany.com
-    Тема: Запрос на покупку новой линейки
-
-    Уважаемая команда,
-
-    Мы хотели бы разместить подтвержденный пробный заказ на три новых вкуса: 10 Truffle Cream Cup Noodle, 8 Corn Butter Cup Noodle и 12 Pepper Crab Cup Noodle. Количества утверждены для ограниченного теста в премиальных магазинах.
-
-    Подтвердите, доступны ли эти товары в вашем активном каталоге. Если нет, пожалуйста, предложите ближайшие альтернативы с аналогичной ценовой категорией и ожидаемым сроком поставки, чтобы мы могли быстро скорректировать план.
-
-    С уважением,
-    Monica Yuen
-    Категорийные закупки
-    """,
-    # 6. All not in list; quantity unclear (Chinese Simplified)
-    """
-    发件人: planning@retailfrontier.com
+    发件人: supply@northgatecommerce.com
     收件人: sales@XYZCompany.com
-    主题: 新口味的可用性检查
+    主题: 多品项补货订单
+
+    亲爱的销售团队，
+
+    请处理以下确认订单，安排下周交付：14箱经典鸡肉杯面，12箱海鲜什锦杯面，10箱蔬菜园杯面。所有数量已批准，并符合三家试点门店的货架规划。
+
+    请将商品分开装箱并贴标签，在装箱单中包含SKU以便收货。请今天确认库存和发货日期，以便物流伙伴锁定卡车时段。
+
+    此致，
+    张伟
+    中央采购
+    """,
+    # 2. All in list; quantity unclear (Chinese)
+    """
+    发件人: ops@sunplazaretail.com
+    收件人: sales@XYZCompany.com
+    主题: 暂定多品项请求
 
     销售团队您好，
 
-    我们的商品部门对 Truffle Cream Cup Noodle、Miso Corn Cup Noodle 和 Lobster Bisque Cup Noodle 感兴趣。目前尚未确认数量，因为门店参与仍在进行，但我们需要尽早了解可用性。
+    我们需要补货经典鸡肉杯面、咖喱风味杯面和泡菜辣味杯面。目前分店数量仍在汇总，暂时没有最终数字。请为这三种商品预留库存，等待内部计划完成。
+
+    请分享当前库存情况和本周发货的截止时间。我们将在财务批准后尽快回复最终数量。
+
+    谨上，
+    王芳
+    采购运营
+    """,
+    # 3. All partial in list; quantity provided (Chinese)
+    """
+    发件人: desk@harvestretailers.com
+    收件人: sales@XYZCompany.com
+    主题: 部分名称多品项订单
+
+    亲爱的销售团队，
+
+    请安排以下确认订单：15箱鸡肉杯面，11箱海鲜杯面，9箱泡菜杯面。数量已固定并批准，但我们的内部文件使用了缩写名称。
+
+    请在发货前将每一行映射到您目录中的准确产品，并在确认单上显示最终名称。交货时间为周五上午至主配送中心。
+
+    谢谢，
+    刘强
+    采购协调员
+    """,
+    # 4. All partial in list; quantity unclear (Chinese)
+    """
+    发件人: team@cityretailhub.com
+    收件人: sales@XYZCompany.com
+    主题: 初步补货请求
+
+    销售团队您好，
+
+    我们计划为区域促销补充鸡肉杯面、虾仁杯面和猪肉杯面。请求中的名称是缩写，最终数量仍在等待区域经理确认。请为这些商品预留库存，等待分配完成。
+
+    请回复每个商品的可用选项和交货时间，以便我们今天锁定正式订单。
+
+    此致，
+    李杰
+    战略采购
+    """,
+    # 5. All not in list; quantity provided (Chinese)
+    """
+    发件人: category@nextwavefoods.com
+    收件人: sales@XYZCompany.com
+    主题: 新口味采购询问
+
+    亲爱的团队，
+
+    我们希望试购三种新口味：10箱松露奶油杯面，8箱玉米黄油杯面，12箱胡椒蟹杯面。数量已确认，用于高端门店的限量测试。
+
+    请确认这些商品是否在您目录中。如不可供货，请建议最接近的替代品及价格和交期，以便我们快速调整计划。
+
+    谨上，
+    陈丽
+    品类采购
+    """,
+    # 6. All not in list; quantity unclear (Chinese)
+    """
+    发件人: planning@retailfrontier.com
+    收件人: sales@XYZCompany.com
+    主题: 新口味可用性检查
+
+    销售团队您好，
+
+    我们的商品部门对松露奶油杯面、味噌玉米杯面和龙虾浓汤杯面感兴趣。目前尚未确认数量，因为门店参与仍在进行，但我们需要尽早了解可用性。
 
     请告知这些产品是否在您产品线中，如果没有，请推荐可快速供应的类似产品用于试点上市。
 
     此致，
-    Raymond Ip
-    需求规划
+    赵强
+    需求计划
     """,
-    # 7. All product not provided; quantity provided (Japanese)
+    # 7. All product not provided; quantity provided (Chinese)
     """
-    差出人: buyersupport@harborlinegroup.com
+    发件人: support@harborlinegroup.com
+    收件人: sales@XYZCompany.com
+    主题: 仅数量补货请求
+
+    亲爱的销售团队，
+
+    请准备三条补货线，数量已确认：第一条20箱，第二条14箱，第三条9箱。内部表格遗漏了产品名称，但数量已批准，应立即预留。
+
+    请告知所需的最小产品信息，并在我们修正字段前暂时保留这些数量。
+
+    谢谢，
+    孙敏
+    采购支持
+    """,
+    # 8. All product not provided; quantity unclear (Japanese)
+    """
+    差出人: coordination@greenlanehk.com
     宛先: sales@XYZCompany.com
-    件名: 数量のみの補充ライン
+    件名: 補充の未確定情報
 
     営業チーム各位
 
-    今回のサイクルで次の数量を確認済みです: ライン1に20ケース、ライン2に14ケース、ライン3に9ケース。内部スプレッドシートで商品名が欠落しましたが、数量は承認済みで直ちに確保すべきです。
+    カップヌードルカテゴリーの補充ラインを作成する必要がありますが、商品名と数量はまだ支店から提出されていません。最終的な詳細が確認されるまで、適度な在庫容量を確保してください。
 
-    必要な最小限の商品情報を教えていただき、商品フィールドを修正するまでこれらの数量枠を一時的に保持してください。
+    割当方針と最新の注文締切時間を共有いただけますか。内部統合が完了次第、商品名と数量を送付します。
 
-    よろしくお願いします。
-    Tiffany Leung
-    購買サポート
+    敬具
+    田中美咲
+    需要調整
     """,
-    # 8. All product not provided; quantity unclear (Portuguese)
+    # 9. All in list by SKU; quantity provided (Japanese)
     """
-    De: demand.coordination@greenlanehk.com
-    Para: sales@XYZCompany.com
-    Assunto: Detalhes pendentes para reposição
+    差出人: purchase@riverstonefoods.com
+    宛先: sales@XYZCompany.com
+    件名: SKUベースの複数商品注文
 
-    Olá equipe,
+    営業チーム各位
 
-    Precisamos criar várias linhas de reposição para nossa categoria de cup noodles, mas tanto os nomes dos produtos quanto as quantidades exatas ainda estão pendentes das filiais. Por favor, reservem uma capacidade modesta de estoque para nós até que os detalhes finais sejam confirmados.
+    次の確認済み注文をSKUで処理してください: SKU1001を18ユニット（クラシックチキンカップヌードル）、SKU1005を16ユニット（豚骨カップヌードル）、SKU1008を12ユニット（キムチスパイシーカップヌードル）。数量は補充委員会に承認され、金曜日にRS-02倉庫へ納品されるべきです。
 
-    Poderiam compartilhar sua política de alocação e o último prazo de pedido? Assim que a consolidação interna estiver concluída, enviaremos imediatamente os nomes e quantidades completos.
+    請求書と梱包リストにSKUと商品説明を含めてください。在庫状況と出荷予定を確認いただき、内部予約を完了させてください。
 
-    Atenciosamente,
-    Gloria Pui
-    Coordenação de Demanda
+    敬具
+    松本健
+    調達マネージャー
     """,
-    # 9. All in list by SKU; quantity provided (Arabic)
+    # 10. All in list; over stock (Japanese)
     """
-    من: purchasing@riverstonefoods.com
-    إلى: sales@XYZCompany.com
-    الموضوع: أمر شراء متعدد العناصر حسب SKU
+    差出人: ops@megastorechain.com
+    宛先: sales@XYZCompany.com
+    件名: 大規模キャンペーン注文
 
-    فريق المبيعات المحترم،
+    営業チーム各位
 
-    يرجى معالجة الطلب المؤكد التالي حسب SKU: 18 وحدة من SKU1001، و16 وحدة من SKU1005، و12 وحدة من SKU1008. تمت الموافقة على جميع الكميات من قبل لجنة التوريد ويجب تسليمها إلى المستودع RS-02 يوم الجمعة.
+    大規模プロモーションを準備しており、次の数量を依頼します: クラシックチキンカップヌードル120個、スパイシービーフカップヌードル140個、シュリンプフレーバーカップヌードル110個。これらの数値は印刷済みのキャンペーン資料に基づいているため、緊急の在庫確認が必要です。
 
-    يرجى تضمين SKU ووصف المنتج في الفاتورة وقائمة التعبئة. نرجو تأكيد توفر المخزون وتوقيت الشحن المخطط لإكمال الحجز الداخلي.
+    即時供給可能な数量と、不足分に対する分割出荷の可否をお知らせください。店舗活性化計画を調整するため、迅速な回答をお願いします。
 
-    مع خالص التحية،
-    Howard Tsang
-    مدير المشتريات
+    敬具
+    伊藤真由
+    オペレーション購買
     """,
-    # 10. All in list; over stock (Korean)
+    # 11. In list and not in list; quantity provided (Japanese)
     """
-    발신: operations.buying@megastorechain.com
-    수신: sales@XYZCompany.com
-    제목: 대규모 프로모션 주문
+    差出人: procurement@sunlighthub.com
+    宛先: sales@XYZCompany.com
+    件名: 混在カタログ注文
 
-    영업팀 여러분,
+    営業チーム各位
 
-    대규모 프로모션을 준비 중이며 다음 수량을 요청합니다: Classic Chicken Cup Noodle 120개, Spicy Beef Cup Noodle 140개, Shrimp Flavor Cup Noodle 110개. 이 수치는 이미 인쇄된 캠페인 자료와 연결되어 있으므로 긴급한 재고 확인이 필요합니다.
+    ベジタブルガーデンカップヌードルを19ユニット、トリュフマッシュルームカップヌードルを11ユニット発注します。数量は確定済みです。最初の商品は標準カタログに含まれていますが、2つ目は試験的に依頼しており、現在のリストにない可能性があります。
 
-    즉시 공급 가능한 수량과 부족분에 대한 분할 배송 가능 여부를 알려주시기 바랍니다. 매장 활성화 계획을 맞추기 위해 빠른 회신을 부탁드립니다.
+    出荷可能な商品を確認し、利用できない場合は代替品を提案してください。
 
-    감사합니다,
-    Winnie Ko
-    운영 구매팀
+    敬具
+    山口翔
+    カテゴリー調達
+    """
+     # 12. In list and not provided; quantity provided (Japanese)
+    """
+    差出人: demand@retailsphere.com
+    宛先: sales@XYZCompany.com
+    件名: 商品フィールド欠落
+
+    営業チーム各位
+
+    まずキムチスパイシーカップヌードルを15ユニット手配してください。さらに数量9のラインが必要ですが、商品名がデータエクスポートの不具合で欠落しました。両方の数量は承認済みで、今週の出荷に含めるべきです。
+
+    欠落した商品フィールドをどのように補完すべきかご指示ください。その間、在庫を確保していただければ幸いです。
+
+    敬具
+    木村真紀
+    需要購買
+    """,
+    # 13. In list and not in list; quantity unclear (Japanese)
+    """
+    差出人: buyers@highstreetgroup.com
+    宛先: sales@XYZCompany.com
+    件名: 在庫予約依頼
+
+    営業チーム各位
+
+    スパイシービーフカップヌードルの補充を計画しており、さらに新しいライン「ブラックガーリックカップヌードル」を検討しています。数量はまだ確定していません。キャンペーン範囲が承認待ちだからです。
+
+    記載された商品の在庫を予約し、新しいラインが御社の品揃えに存在するかどうか確認してください。もし利用できない場合は、推奨される代替品を教えてください。
+
+    敬具
+    長谷川優子
+    購買部
+    """,
+    # 14. In list and not provided; quantity unclear (Japanese)
+    """
+    差出人: replenish@freshcityretail.com
+    宛先: sales@XYZCompany.com
+    件名: 情報不足の補充依頼
+
+    営業チーム各位
+
+    シーフードメドレーカップヌードルともう一つのヌードルラインを購入予定です。2つ目の商品名は計画表に記録されておらず、両方の数量もまだ統合中です。
+
+    シーフードメドレーの現在の在庫を共有し、注文締切時間を教えてください。支店データが揃い次第、欠落した商品名と確定数量をお送りします。
+
+    敬具
+    小林健
+    補充チーム
     """
 ]
