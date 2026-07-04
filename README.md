@@ -54,7 +54,11 @@ combined_component.c_order_validator.py
 test_combined_workflow.py
 
 Sample Data:
-email_data.py
+test_email.mock_email.py *** only for testing the code
+test_email.single_product.py
+test_email.multiple_product.py
+test_email.language_single_product.py
+test_email.language_multiple_product.py
 general_information.product_list.py
 general_information.status_list.py
 --------------------------------------------------------------------
