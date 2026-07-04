@@ -21,9 +21,9 @@ pandas: pip install pandas
 # Testing file:
 Baseline: python test_baseline.py
 Baseline + Name Detection: python test_baseline_nameDetect.py
-Baseline + Extractor: python test_baseline_extractor.py
+Baseline + Translator: python test_baseline_translator.py
 Baseline + Validator: python test_baseline_validator.py
-Full workflow: python order_full_modifier.py
+Full workflow: python test_combined_workflow.py
 
 ----------------------------------------------------------------
 # Project File
@@ -38,9 +38,9 @@ Harness2 (add name detection):
 name_detection_component.name_detect.py
 test_baseline_nameDetect.py
 
-Harness3 (add extract helper): 
-extractot_component.order_extractor_plain.py
-test_baseline_extractor.py
+Harness3 (add translator): 
+translator_component.order_translator.py
+test_baseline_translator.py
 
 Harness4 (add validator):
 validator_component.order_extractor.py
@@ -48,7 +48,10 @@ validator_component.product_validator.py
 test_baseline_validator.py
 
 Full Workflow:
-order_full_modifier.py
+combined_component.c_format_order.py
+combined_component.c_order_translator.py
+combined_component.c_order_validator.py
+test_combined_workflow.py
 
 Sample Data:
 email_data.py
