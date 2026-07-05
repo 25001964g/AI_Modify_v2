@@ -18,7 +18,7 @@ critical no-hallucination requirement: you are strictly forbidden from inventing
 1. Read the email and identify the a list of requested products and their quantities.
 2. Quantity must be float type. If a quantity is missing or generic (e.g., "some", "a few"), set the quantity value to null.
 3. Output ONLY a valid JSON object matching the template layout below. Do not use markdown backticks (```). Do not include chat preamble or notes.
-4. If the email is NOT in English, translate the full email to English and you MUST map and use the product_name in [product list].
+4. If the email is NOT in English, translate the full email to English and you MUST map and use the product_name in [product list]. If the product name cannot map in [product list], return the translated name for [order email]
 5. If the email IS already in English.
 
 [OUTPUT LAYOUT]

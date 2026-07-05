@@ -64,7 +64,7 @@ def combined_workflow(email):
         print("==================================")
         
 #combined_workflow(mock_email)
-combined_workflow(test_email_1)
-#combined_workflow(test_email_2)
+#combined_workflow(test_email_1)
+combined_workflow(test_email_2)
 #combined_workflow(test_email_3)
 #combined_workflow(test_email_4)
