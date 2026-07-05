@@ -22,9 +22,20 @@ critical no-hallucination requirement: you are strictly forbidden from inventing
 5. If the email IS already in English.
 
 [OUTPUT LAYOUT]
+if one product ordered only, return:
 {{
+  "customer_name":[Entity Name of Customer],
   "items": [
-    {{"product_name": "exact name from product list", "quantity": Number or null}}
+    {{"product_name": "Item 1", "quantity": Number or null}}
+  ]
+}}
+
+if multiple products ordered, return:
+{{
+  "customer_name":[Entity Name of Customer],
+  "items": [
+    {{"product_name": "Item 1", "quantity": Number or null}},
+    {{"product_name": "Item 2", "quantity": Number or null}}
   ]
 }}
 """
