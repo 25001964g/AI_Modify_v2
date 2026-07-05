@@ -56,5 +56,5 @@ def baseline_name_detect(email, product_list, status):
 #baseline_name_detect(mock_email, product_list, status)
 #baseline_name_detect(test_email_1, product_list, status)
 #baseline_name_detect(test_email_2, product_list, status)
-baseline_name_detect(test_email_3, product_list, status)
-#baseline_name_detect(test_email_4, product_list, status)
+#baseline_name_detect(test_email_3, product_list, status)
+baseline_name_detect(test_email_4, product_list, status)
