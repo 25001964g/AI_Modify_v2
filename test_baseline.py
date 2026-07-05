@@ -54,7 +54,7 @@ def baseline(email, product_list, status):
         print("==================================")
 
 #baseline(mock_email, product_list, status)
-baseline(test_email_1, product_list, status)
+#baseline(test_email_1, product_list, status)
 #baseline(test_email_2, product_list, status)
 #baseline(test_email_3, product_list, status)
-#baseline(test_email_4, product_list, status)
+baseline(test_email_4, product_list, status)

@@ -174,7 +174,7 @@ test_email_4 = [
     敬具
     山口翔
     カテゴリー調達
-    """
+    """,
      # 12. In list and not provided; quantity provided (Japanese)
     """
     差出人: demand@retailsphere.com
