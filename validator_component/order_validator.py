@@ -33,6 +33,8 @@ def order_validation (email, product_list):
     
     # Match SKUs
     matched_sku = pd.merge(df_sku, product_lookup, left_on='match_key', right_on = 'match_sku', how='left', suffixes=('_skuDummy', ''))
+    # Use the incorrect input as output
+    matched_sku['SKU'] = matched_sku['match_key']
 
     # Combine both match tracks back together safely
     all_items_list = pd.concat([matched_name, matched_sku], ignore_index=True)
@@ -47,7 +49,7 @@ def order_validation (email, product_list):
     # Condition 3: Order Quantity exceed current stock
     conditions = [
         (all_items_list['sku'].isna()),       
-        (all_items_list['quantity'].isna()),
+        (all_items_list['quantity'].isna() | all_items_list['quantity'] == 0),
         (all_items_list['quantity']>all_items_list['stock'])   
     ]
     status = ['unlisted', 'ambiguous', 'not enough stock']
