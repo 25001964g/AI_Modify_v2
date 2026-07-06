@@ -1,6 +1,11 @@
 import requests
 from ss.ss_order_validator import order_validation
-from order_extractor import item_extract
+
+try:
+    from order_extractor import item_extract
+except ImportError:
+    from validator_component.order_extractor import item_extract
+
 from email_data import mock_email, demo_email
 from general_information.product_lists import product_list
 from general_information.status_list import status

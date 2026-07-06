@@ -1,6 +1,5 @@
 import requests
 
-#Harness: Identify missing/ambiguous parameters before extraction
 def item_extract(email):
     #This acts as an initial control step to steer the extraction
     extract_prompt = f"""

@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import json
-from order_extractor import item_extract
+from .order_extractor import item_extract
 
 def order_validation (email, product_list):
     #Get the structured JSON string from your Ollama request response

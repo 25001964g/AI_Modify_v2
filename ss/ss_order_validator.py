@@ -3,7 +3,11 @@ import numpy as np
 import json
 from email_data import mock_email
 from general_information.product_lists import product_list
-from order_extractor import item_extract
+
+try:
+    from ..validator_component.order_extractor import item_extract
+except ImportError:
+    from order_extractor import item_extract
 
 def order_validation (email, product_list):
     #Get the structured JSON string from your Ollama request response

@@ -5,11 +5,14 @@ from test_email.multiple_product import test_email_2
 from test_email.language_single_product import test_email_3
 from test_email.language_multiple_product import test_email_4
 from general_information.product_lists import product_list
+from general_information.status_list import status
 from validator_component.order_validator import order_validation
+from test_baseline import baseline
 
-def baseline_valid(email, product_list):
+def baseline_valid(email, product_list, status):
     for i, current_email in enumerate(email):
         print(f"Processing mock email {i+1}")
+        baseline_output = baseline(current_email, product_list, status)
         validation_result = order_validation(current_email, product_list)
         resp = requests.post("http://localhost:11434/api/generate", json={
             "model": "phi3.5",
@@ -20,14 +23,14 @@ def baseline_valid(email, product_list):
 
         ### Input Data
 
-        [order email]
-        {current_email}
+        [order extracted]
+        {baseline_output}
 
         [validation result reference]
         {validation_result}
 
         [Strict Transformation Rules]
-        1. Map Customer Identity: Map the top-level "customer" string field by copying the exact string found within [order email].
+        1. Map Customer Identity: Map the top-level "customer" string field by copying the exact string found within [order extracted].
         2. Synchronize Item Structure (1:1 standard): Read the structured matrix/table provided in [Validation Result Reference]. For every single distinct row object present in that reference, create exactly one item object inside the final output "items" array. Do not drop, skip, combine, or invent records.
         3. Enforce Database Standard Fields: For each item mapping, inject and format the following explicit keys pulled from your validated data:
             * "product_name": Copy the official product description exactly as written in [Validation Result Reference].
@@ -51,8 +54,8 @@ def baseline_valid(email, product_list):
         print(resp.json()["response"])
         print("==================================")
 
-#baseline_valid(mock_email, product_list)
-baseline_valid(test_email_1, product_list)
-#baseline_valid(test_email_2, product_list)
-#baseline_valid(test_email_3, product_list)
-#baseline_valid(test_email_4, product_list)
+baseline_valid(mock_email[0], product_list, status)
+#baseline_valid(test_email_1, product_list, status)
+#baseline_valid(test_email_2, product_list, status)
+#baseline_valid(test_email_3, product_list, status)
+#baseline_valid(test_email_4, product_list, status)
