@@ -4,7 +4,7 @@ import json
 from .order_extractor import item_extract
 
 def order_validation (email, product_list):
-    #Get the structured JSON string from your Ollama request response
+    #Get the structured JSON string from Ollama request response
     order_list = item_extract(email)
     try:
         #Load json formatted data to pandas dataframe
@@ -12,7 +12,7 @@ def order_validation (email, product_list):
         df = pd.DataFrame(extracted_data['items'])
     except (json.JSONDecodeError, KeyError, TypeError) as e:
         print(f"Error parsing JSON from email: {e}")
-        # Return an empty DataFrame matching your schema if input fails
+        # Return an empty DataFrame matching schema if input fails
         return pd.DataFrame(columns=['product_name', 'quantity', 'sku', 'price', 'subtotal', 'status'])
 
     # Data Cleaning for matching
