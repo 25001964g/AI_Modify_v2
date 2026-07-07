@@ -68,7 +68,7 @@ mock_email = [
     To: sales@XYZCompany.com
     Hi Sales Team,
     Please process an order. 
-    We would like to order SKU20001. 
+    We would like to order 12 SKU1001 and 5 Shrimp Flavor Cup Noodle. 
     
     Thanks,
     Amy
